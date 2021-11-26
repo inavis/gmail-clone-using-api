@@ -107,8 +107,8 @@
 
 let sentmsgs;
 let primarymsgs;
-let sentmails=[];
-let primarymails=[];
+var sentmails=[];
+var primarymails=[];
 
 let content =document.getElementsByClassName("mails");
 
@@ -199,41 +199,6 @@ function getData(){
   //GETS ID OF USER LOGGING IN
   let userId=String(user.Ba)
 
-//GETS BASIC PROFILE DETAILS
-let request;
- request = gapi.client.request({
-  'method': 'GET',
-  'path': `gmail/v1/users/${userId}/profile`,
-//   'params': {'fields': 'user'}
-});
-// Execute the API request.
-request.execute(function(response) {
-  //console.log(response.emailAddress,response.messagesTotal);
-});
-
-//GETS SENT MSGS -> details like count,..
- request = gapi.client.request({
-  'method': 'GET',
-  'path': `gmail/v1/users/${userId}/labels/SENT`,
-//   'params': {'fields': 'user'}
-});
-// Execute the API request.
-request.execute(function(response) {
-  //console.log(response.messagesTotal,response.messagesUnread);
-});
-
-//GETS PRIMARY MSGS -> details like count,..
-request = gapi.client.request({
-  'method': 'GET',
-  'path': `gmail/v1/users/${userId}/labels/INBOX`,
-//   'params': {'fields': 'user'}
-});
-// Execute the API request.
-request.execute(function(response) {
- // console.log(response.messagesTotal,response.messagesUnread);
-});
-
-
 //GETS SENT MSGS details->  like message id,..
 request = gapi.client.request({
   'method': 'GET',
@@ -271,10 +236,11 @@ request.execute(function(response) {
        // console.log(images);
        let data={'to':to,'subject':subject,'date':date,'images':images};
        sentmails.push(data);
-       console.log(sentmails)
+       
        
 });
   }
+  renderData(sentmails);
 });
 
 
@@ -328,6 +294,10 @@ request.execute(function(response) {
 });
     }
   
+}
+
+function renderData(sentmails){
+    console.log(sentmails)
 }
  
 
