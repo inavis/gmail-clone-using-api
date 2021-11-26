@@ -19,7 +19,7 @@ function onSignIn(googleUser) {
     console.log(url1);
     fetch(url1)
     .then((response)=> response.json())
-    .then ((data)=>renderToys(data));
+    .then ((data)=>console.log(data));
   }
   
   function signOut() {
