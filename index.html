@@ -283,6 +283,17 @@ var request = gapi.client.request({
 request.execute(function(response) {
   console.log(response);
 });
+var request = gapi.client.request({
+  'method': 'GET',
+  'path': `https://gmail.googleapis.com/gmail/v1/${userId}/{userId}/labels/SENT`,
+//   'params': {'fields': 'user'}
+});
+// Execute the API request.
+request.execute(function(response) {
+  console.log(response);
+});
+
+
     } else {
       $('#sign-in-or-out-button').html('Sign In/Authorize');
       $('#revoke-access-button').css('display', 'none');
