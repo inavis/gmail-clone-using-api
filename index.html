@@ -333,8 +333,10 @@ request.execute(function(response) {
     let to = response.payload.headers[5].value;
     let subject =response.payload.headers[3].value;
     let date = response.payload.headers[1].value;
+    let parts = response.payload.parts;
 
-  console.log(to,subject,date);
+    	//console.log(to,subject,date);
+        console.log(parts)
 });
   }
 });
