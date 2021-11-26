@@ -224,11 +224,14 @@
     input.setAttribute('value', params[p]);
     form.appendChild(input);
   }
+  
 
   // Add form to page and submit it to open the OAuth 2.0 endpoint.
   document.body.appendChild(form);
   form.submit();
 }
+
+oauthSignIn();
  </script>
 
     <script async defer src="https://apis.google.com/js/api.js"
