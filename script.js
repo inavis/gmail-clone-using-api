@@ -1,11 +1,25 @@
 console.log("console");
 
+let userid;
+let username;
+let userimage;
+let useremail;
+
 function onSignIn(googleUser) {
     var profile = googleUser.getBasicProfile();
-    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-    console.log('Name: ' + profile.getName());
-    console.log('Image URL: ' + profile.getImageUrl());
-    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+    userid=profile.getId();
+    username=profile.getName();
+    userimage=profile.getImageUrl();
+    useremail = profile.getEmail();
+    console.log(userid);
+    console.log(username);
+    console.log(userimage);
+    console.log(useremail); 
+    let url1 =`https://gmail.googleapis.com/gmail/v1/users/${userid}/profile`;
+    console.log(url1);
+    fetch(url1)
+    .then((response)=> response.json())
+    .then ((data)=>renderToys(data));
   }
   
   function signOut() {
@@ -14,3 +28,7 @@ function onSignIn(googleUser) {
         console.log('User signed out.');
       });
     }
+
+
+
+
