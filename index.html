@@ -176,7 +176,25 @@ var GoogleAuth;
       $('#auth-status').html('You are currently signed in and have granted ' +
           'access to this app.');
           
-  console.log(user.Ba);
+ 
+    } else {
+      $('#sign-in-or-out-button').html('Sign In/Authorize');
+      $('#revoke-access-button').css('display', 'none');
+      $('#auth-status').html('You have not authorized this app or you are ' +
+          'signed out.');
+    }
+  }
+
+  function updateSigninStatus() {
+    setSigninStatus();
+  }
+
+function getData(){
+
+     user = GoogleAuth.currentUser.get();
+     isAuthorized = user.hasGrantedScopes(SCOPE);
+    if (isAuthorized) {
+        console.log(user.Ba);
   //GETS ID OF USER LOGGING IN
   let userId=String(user.Ba)
 
@@ -307,23 +325,10 @@ request.execute(function(response) {
 
   }
 });
-
-
-
-    } else {
-      $('#sign-in-or-out-button').html('Sign In/Authorize');
-      $('#revoke-access-button').css('display', 'none');
-      $('#auth-status').html('You have not authorized this app or you are ' +
-          'signed out.');
     }
-  }
-
-  function updateSigninStatus() {
-    setSigninStatus();
-  }
-
-
   
+}
+  getData();
 
  </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
