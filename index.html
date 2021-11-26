@@ -271,7 +271,7 @@ var GoogleAuth;
   console.log(user.Ba);
   let userId=String(user.Ba)
 
-  fetch(`https://gmail.googleapis.com/gmail/v1/users/${userId}/profile`)
+  fetch(`https://gmail.googleapis.com/gmail/v1/users/{userId}/profile`)
   .then((res)=>console.log(res));
 
 
