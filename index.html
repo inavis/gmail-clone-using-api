@@ -50,10 +50,10 @@
 
     
     <!--Add buttons to initiate auth sequence and sign out-->
-    <button id="authorize_button" style="display: none;">Authorize</button>
+    <!-- <button id="authorize_button" style="display: none;">Authorize</button>
     <button id="signout_button" style="display: none;">Sign Out</button>
 
-    <pre id="content" style="white-space: pre-wrap;"></pre>
+    <pre id="content" style="white-space: pre-wrap;"></pre> -->
 
 
 
@@ -67,6 +67,12 @@
 
 
 
+    <button id="sign-in-or-out-button"
+    style="margin-left: 25px">Sign In/Authorize</button>
+<button id="revoke-access-button"
+    style="display: none; margin-left: 25px">Revoke access</button>
+
+<div id="auth-status" style="display: inline; padding-left: 25px"></div><hr>
 
 
 
@@ -196,48 +202,88 @@
 // then((res)=>console.log(res))
 //  }
 
-/*
- * Create form to request access token from Google's OAuth 2.0 server.
- */
- function oauthSignIn() {
-  // Google's OAuth 2.0 endpoint for requesting an access token
-  var oauth2Endpoint = 'https://accounts.google.com/o/oauth2/v2/auth';
 
-  // Create <form> element to submit parameters to OAuth 2.0 endpoint.
-  var form = document.createElement('form');
-  form.setAttribute('method', 'GET'); // Send as a GET request.
-  form.setAttribute('action', oauth2Endpoint);
 
-  // Parameters to pass to OAuth 2.0 endpoint.
-  var params = {'client_id': '671722528125-i7tojhm11u449jnsjhvut7esm6q4c01m.apps.googleusercontent.com',
-                'redirect_uri': 'https://gmail-clone-using-api.netlify.app',
-                'response_type': 'token',
-                'scope': 'https://mail.google.com/',
-                'include_granted_scopes': 'true',
-                'state': 'pass-through value'};
-
-  // Add form parameters as hidden input values.
-  for (var p in params) {
-    var input = document.createElement('input');
-    // input.setAttribute('type', 'hidden');
-    input.setAttribute('name', p);
-    input.setAttribute('value', params[p]);
-    form.appendChild(input);
+var GoogleAuth;
+  var SCOPE = 'https://www.googleapis.com/auth/drive.metadata.readonly';
+  function handleClientLoad() {
+    // Load the API's client and auth2 modules.
+    // Call the initClient function after the modules load.
+    gapi.load('client:auth2', initClient);
   }
-  
 
-  // Add form to page and submit it to open the OAuth 2.0 endpoint.
-  document.body.appendChild(form);
-  form.submit();
-}
+  function initClient() {
+    // In practice, your app can retrieve one or more discovery documents.
+    var discoveryUrl = 'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest';
 
-GoogleAuth.signIn();
+    // Initialize the gapi.client object, which app uses to make API requests.
+    // Get API key and client ID from API Console.
+    // 'scope' field specifies space-delimited list of access scopes.
+    gapi.client.init({
+        'apiKey': 'AIzaSyD3e759aqpXnuiQzAMwAJGrPhKLI0JZDUI',
+        'clientId': '671722528125-i7tojhm11u449jnsjhvut7esm6q4c01m.apps.googleusercontent.com',
+        'discoveryDocs': [discoveryUrl],
+        'scope': 'https://mail.google.com/'
+    }).then(function () {
+      GoogleAuth = gapi.auth2.getAuthInstance();
+
+      // Listen for sign-in state changes.
+      GoogleAuth.isSignedIn.listen(updateSigninStatus);
+
+      // Handle initial sign-in state. (Determine if user is already signed in.)
+      var user = GoogleAuth.currentUser.get();
+      setSigninStatus();
+
+      // Call handleAuthClick function when user clicks on
+      //      "Sign In/Authorize" button.
+      $('#sign-in-or-out-button').click(function() {
+        handleAuthClick();
+      });
+      $('#revoke-access-button').click(function() {
+        revokeAccess();
+      });
+    });
+  }
+
+  function handleAuthClick() {
+    if (GoogleAuth.isSignedIn.get()) {
+      // User is authorized and has clicked "Sign out" button.
+      GoogleAuth.signOut();
+    } else {
+      // User is not signed in. Start Google auth flow.
+      GoogleAuth.signIn();
+    }
+  }
+
+  function revokeAccess() {
+    GoogleAuth.disconnect();
+  }
+
+  function setSigninStatus() {
+    var user = GoogleAuth.currentUser.get();
+    var isAuthorized = user.hasGrantedScopes(SCOPE);
+    if (isAuthorized) {
+      $('#sign-in-or-out-button').html('Sign out');
+      $('#revoke-access-button').css('display', 'inline-block');
+      $('#auth-status').html('You are currently signed in and have granted ' +
+          'access to this app.');
+    } else {
+      $('#sign-in-or-out-button').html('Sign In/Authorize');
+      $('#revoke-access-button').css('display', 'none');
+      $('#auth-status').html('You have not authorized this app or you are ' +
+          'signed out.');
+    }
+  }
+
+  function updateSigninStatus() {
+    setSigninStatus();
+  }
  </script>
-
-    <script async defer src="https://apis.google.com/js/api.js"
-      onload="this.onload=function(){};handleClientLoad()"
-      onreadystatechange="if (this.readyState === 'complete') this.onload()">
-    </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script async defer src="https://apis.google.com/js/api.js"
+        onload="this.onload=function(){};handleClientLoad()"
+        onreadystatechange="if (this.readyState === 'complete') this.onload()">
+</script>
 
     <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
 <script src="./script.js"></script>
