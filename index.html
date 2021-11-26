@@ -267,6 +267,8 @@ var GoogleAuth;
       $('#revoke-access-button').css('display', 'inline-block');
       $('#auth-status').html('You are currently signed in and have granted ' +
           'access to this app.');
+          
+  console.log(user)
     } else {
       $('#sign-in-or-out-button').html('Sign In/Authorize');
       $('#revoke-access-button').css('display', 'none');
@@ -279,7 +281,6 @@ var GoogleAuth;
     setSigninStatus();
   }
 
-  console.log(user)
 
 //   // Example 2: Use gapi.client.request(args) function
 // var request = gapi.client.request({
