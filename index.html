@@ -271,8 +271,7 @@ var GoogleAuth;
   console.log(user.Ba);
   let userId=String(user.Ba)
 
-//   fetch(`https://gmail.googleapis.com/gmail/v1/users/${user}/profile`)
-//   .then((res)=>console.log(res));
+
 let request;
  request = gapi.client.request({
   'method': 'GET',
@@ -283,9 +282,22 @@ let request;
 request.execute(function(response) {
   console.log(response);
 });
+
+
  request = gapi.client.request({
   'method': 'GET',
   'path': `gmail/v1/users/${userId}/labels/SENT`,
+//   'params': {'fields': 'user'}
+});
+// Execute the API request.
+request.execute(function(response) {
+  console.log(response);
+});
+
+
+request = gapi.client.request({
+  'method': 'GET',
+  'path': `gmail/v1/users/${userId}/labels/INBOX`,
 //   'params': {'fields': 'user'}
 });
 // Execute the API request.
