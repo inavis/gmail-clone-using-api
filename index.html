@@ -330,10 +330,10 @@ request.execute(function(response) {
 });
 // Execute the API request.
 request.execute(function(response) {
-    let to = payload.headers[5].value;
-    let subject = payload.headers[3].value;
-    let date = payload.headers[1].value;
-    let parts = payload.parts;
+    let to = response.payload.headers[5].value;
+    let subject = response.payload.headers[3].value;
+    let date = response.payload.headers[1].value;
+    let parts = response.payload.parts;
 
   console.log(to,subject,date,parts);
 });
