@@ -379,11 +379,12 @@ request.execute(function(response) {
     let snippet =response.snippet;
     let payload= response.payload.headers;
     for(let x of payload){
-        if(payload.name='from')from=payload.value;
-        if(payload.name='date')date=payload.value;
-        if(payload.name='subject')subject=payload.value;
-        console.log(x.name)
+        if(x.name='From')from=x.value;
+        if(x.name='Date')date=x.value;
+        if(x.name='Subject')subject=x.value;
+        
     }
+    console.log(from,date,subject)
 
 //     let from =  response.payload.headers[18].value;
 
