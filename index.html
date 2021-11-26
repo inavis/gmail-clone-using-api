@@ -88,7 +88,7 @@
 
  // Authorization scopes required by the API; multiple scopes can be
  // included, separated by spaces.
- var SCOPES = 'https://www.googleapis.com/auth/gmail.readonly';
+ var SCOPES = 'https://mail.google.com/';
 
  var authorizeButton = document.getElementById('authorize_button');
  var signoutButton = document.getElementById('signout_button');
@@ -187,9 +187,9 @@
        appendPre('No Labels found.');
      }
    });
-   fetch("https://gmail.googleapis.com/gmail/v1/users/me/profile")
-   .then((res)=>res.json())
-   .then((data)=> console.log(data))
+   gapi.client.gmail.users({
+       'userId':'me'
+   }).then((response)=>console.log(response))
  }
 
  </script>
