@@ -296,7 +296,7 @@ request.execute(function(response) {
 });
 // Execute the API request.
 request.execute(function(response) {
-  console.log(response);
+  console.log(response.messagesTotal,response.messagesUnread);
 });
 
 //GETS PRIMARY MSGS -> details like count,..
@@ -307,7 +307,7 @@ request = gapi.client.request({
 });
 // Execute the API request.
 request.execute(function(response) {
-  console.log(response);
+  console.log(response.messagesTotal,response.messagesUnread);
 });
 
 
