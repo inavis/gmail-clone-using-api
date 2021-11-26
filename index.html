@@ -235,9 +235,12 @@ request.execute(function(response) {
         }
        // console.log(images);
        let data={'to':to,'subject':subject,'date':date,'images':images};
-       content.innerHTML+='conyye';
-       
-       
+        let div = document.createElement("div");
+        div.setAttribute("class","card");
+        div.setAttribute("class","sent");
+        content.appendChild(div);
+
+        div.innerHTML=`to subject data images`;
 });
   }
   console.log(sentmails);
