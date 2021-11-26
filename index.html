@@ -285,7 +285,7 @@ request1.execute(function(response) {
 });
 var request2 = gapi.client.request({
   'method': 'GET',
-  'path': `https://gmail.googleapis.com/gmail/v1/${userId}/{userId}/labels/SENT`,
+  'path': `gmail/v1/users/${userId}/labels/SENT`,
 //   'params': {'fields': 'user'}
 });
 // Execute the API request.
