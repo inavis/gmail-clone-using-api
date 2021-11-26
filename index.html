@@ -319,7 +319,11 @@ request.execute(function(response) {
     });
 // Execute the API request.
 request.execute(function(response) {
-    console.log(response)
+    let date= response.message.payload.headers[3];
+    let to= response.message.payload.headers[2];
+    let subject= response.message.payload.headers[5];
+    let snippet = response.message.snippet;
+    console.log(data,to,subject,snippet);
 
 });
     }
