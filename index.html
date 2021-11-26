@@ -321,8 +321,9 @@ request = gapi.client.request({
 request.execute(function(response) {
   sentmsgs=response.messages;
   //console.log(sentmsgs.length);
+  //using MSG-ID to get some details to display for every message
   for(let i=0; i<sentmsgs.length;i++){
-      console.log(sentmsgs[i].id);
+     // console.log(sentmsgs[i].id);
       let msgid=sentmsgs[i].id;
       request = gapi.client.request({
   'method': 'GET',
@@ -364,16 +365,20 @@ request.execute(function(response) {
     console.log("INBOX msg");
     primarymsgs=response.messages;
   console.log(primarymsgs);
-});
-//17d5c1e1cc1e9d1d
-request = gapi.client.request({
-  'method': 'GET',
-  'path': `gmail/v1/users/${userId}/messages/17d5c1e1cc1e9d1d`,
-});
+  for(let i=0;i<primarymsgs.length;i++){
+      let msgid = primarymsgs[i].id;
+        request = gapi.client.request({
+    'method': 'GET',
+    'path': `gmail/v1/users/${userId}/messages/${msgid}`,
+    });
 // Execute the API request.
 request.execute(function(response) {
   console.log(response);
 });
+
+  }
+});
+
 
 
     } else {
