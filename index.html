@@ -338,7 +338,7 @@ request = gapi.client.request({
 // Execute the API request.
 request.execute(function(response) {
     console.log("INBOX msg")
-  console.log(response);
+  console.log(response.messages);
 });
 //17d5c1e1cc1e9d1d
 request = gapi.client.request({
