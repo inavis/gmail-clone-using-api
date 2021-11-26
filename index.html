@@ -278,6 +278,9 @@ var GoogleAuth;
   function updateSigninStatus() {
     setSigninStatus();
   }
+
+  var GoogleUser = GoogleAuth.currentUser.getProfile();
+  console.log(GoogleUser)
  </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script async defer src="https://apis.google.com/js/api.js"
