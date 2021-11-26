@@ -374,9 +374,9 @@ request.execute(function(response) {
 // Execute the API request.
 request.execute(function(response) {
     let from =  response.payload.headers[18].value;
-    let snippet =response.payload.snippet;
+   // let snippet =response.payload.snippet;
     let date = response.payload.headers[17].value
-  console.log(from,snipppet,date);
+  console.log(from,date);
 });
 
   }
