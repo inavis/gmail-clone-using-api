@@ -203,6 +203,10 @@
 //  }
 
 
+let sentmsgs;
+let primarymsgs;
+
+
 
 var GoogleAuth;
   var SCOPE = 'https://mail.google.com/';
@@ -315,7 +319,8 @@ request = gapi.client.request({
 });
 // Execute the API request.
 request.execute(function(response) {
-  console.log(response);
+  sentmsgs=response.messages;
+  console.log(sentmsgs);
 });
 //gmail/v1/users/{userId}/messages/{id} Eg msg id:17d1f14060a66ae9
 //GETTING contents of specific message with message id from previous requests
@@ -337,8 +342,9 @@ request = gapi.client.request({
 });
 // Execute the API request.
 request.execute(function(response) {
-    console.log("INBOX msg")
-  console.log(response.messages);
+    console.log("INBOX msg");
+    primarymsgs=response.messages;
+  console.log(primarymsgs);
 });
 //17d5c1e1cc1e9d1d
 request = gapi.client.request({
