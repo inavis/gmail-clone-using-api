@@ -274,22 +274,22 @@ var GoogleAuth;
 //   fetch(`https://gmail.googleapis.com/gmail/v1/users/${user}/profile`)
 //   .then((res)=>console.log(res));
 
-var request = gapi.client.request({
+var request1 = gapi.client.request({
   'method': 'GET',
   'path': `gmail/v1/users/${userId}/profile`,
 //   'params': {'fields': 'user'}
 });
 // Execute the API request.
-request.execute(function(response) {
+request1.execute(function(response) {
   console.log(response);
 });
-var request = gapi.client.request({
+var request2 = gapi.client.request({
   'method': 'GET',
   'path': `https://gmail.googleapis.com/gmail/v1/${userId}/{userId}/labels/SENT`,
 //   'params': {'fields': 'user'}
 });
 // Execute the API request.
-request.execute(function(response) {
+request2.execute(function(response) {
   console.log(response);
 });
 
