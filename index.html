@@ -205,7 +205,7 @@
 
 
 var GoogleAuth;
-  var SCOPE = 'https://www.googleapis.com/auth/drive.metadata.readonly';
+  var SCOPE = 'https://mail.google.com/';
   function handleClientLoad() {
     // Load the API's client and auth2 modules.
     // Call the initClient function after the modules load.
@@ -214,7 +214,7 @@ var GoogleAuth;
 
   function initClient() {
     // In practice, your app can retrieve one or more discovery documents.
-    var discoveryUrl = 'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest';
+    var discoveryUrl = "https://www.googleapis.com/discovery/v1/apis/gmail/v1/rest";
 
     // Initialize the gapi.client object, which app uses to make API requests.
     // Get API key and client ID from API Console.
@@ -223,7 +223,7 @@ var GoogleAuth;
         'apiKey': 'AIzaSyD3e759aqpXnuiQzAMwAJGrPhKLI0JZDUI',
         'clientId': '671722528125-i7tojhm11u449jnsjhvut7esm6q4c01m.apps.googleusercontent.com',
         'discoveryDocs': [discoveryUrl],
-        'scope': 'https://mail.google.com/'
+        'scope': SCOPE
     }).then(function () {
       GoogleAuth = gapi.auth2.getAuthInstance();
 
