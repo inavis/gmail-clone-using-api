@@ -306,7 +306,11 @@ request;
 });
 // Execute the API request.
 request.execute(function(response) {
-  console.log(response);
+    response=response.drafts;
+    //console.log(response);
+    for(let i=0;i<response.length;i++){
+        console.log(response[i].id)
+    }
 });
 
 
