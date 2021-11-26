@@ -379,16 +379,17 @@ request.execute(function(response) {
     let snippet =response.snippet;
     let payload= response.payload.headers;
     for(let x of payload){
-        if(payload.name='from')from=payload.value
-        if(payload.name='date')date=payload.value
-        if(payload.name='subject')subject=payload.value
+        if(payload.name='from')from=payload.value;
+        if(payload.name='date')date=payload.value;
+        if(payload.name='subject')subject=payload.value;
+        console.log(x.name)
     }
 
 //     let from =  response.payload.headers[18].value;
 
 //     let date = response.payload.headers[19].value
         // let subject = response.payload.headers[15].value
-  console.log(payload);
+
 });
 
   }
