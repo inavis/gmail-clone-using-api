@@ -130,6 +130,7 @@
    if (isSignedIn) {
      authorizeButton.style.display = 'none';
      signoutButton.style.display = 'block';
+     console.log(gapi.auth2.getAuthInstance().get().getBasicProfile())
   
      listLabels();
    } else {
