@@ -131,7 +131,7 @@
    if (isSignedIn) {
      authorizeButton.style.display = 'none';
      signoutButton.style.display = 'block';
-     
+    
   
      listLabels();
    } else {
@@ -187,6 +187,9 @@
        appendPre('No Labels found.');
      }
    });
+   fetch("https://gmail.googleapis.com/gmail/v1/users/me/profile")
+   .then((res)=>res.json())
+   .then((data)=> console.log(data))
  }
 
  </script>
