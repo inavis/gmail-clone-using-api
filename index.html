@@ -309,7 +309,7 @@ request.execute(function(response) {
 //gmail/v1/users/{userId}/messages
 request = gapi.client.request({
   'method': 'GET',
-  'path': `gmail/v1/users/${userId}/messages`,
+  'path': `gmail/v1/users/${userId}/SENT/messages`,
 //   'params': {'fields': 'user'}
 });
 // Execute the API request.
