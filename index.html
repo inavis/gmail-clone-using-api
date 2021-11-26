@@ -309,7 +309,19 @@ request.execute(function(response) {
     response=response.drafts;
     //console.log(response);
     for(let i=0;i<response.length;i++){
-        console.log(response[i].id)
+       // console.log(response[i].id)
+      
+        let draftid = response[i].id;
+
+        request = gapi.client.request({
+    'method': 'GET',
+    'path': `gmail/v1/users/${userId}/drafts/${draftid}`,
+    });
+// Execute the API request.
+request.execute(function(response) {
+    console.log(response)
+
+});
     }
 });
 
