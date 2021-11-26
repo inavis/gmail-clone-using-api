@@ -318,6 +318,7 @@ request.execute(function(response) {
   console.log(response);
 });
 //gmail/v1/users/{userId}/messages/{id} Eg msg id:17d1f14060a66ae9
+//GETTING contents of specific message with message id from previous requests
 request = gapi.client.request({
   'method': 'GET',
   'path': `gmail/v1/users/${userId}/messages/17d1f14060a66ae9`,
@@ -327,6 +328,17 @@ request.execute(function(response) {
   console.log(response);
 });
 
+
+//GETS INBOX MSGS details->  like message id,..
+request = gapi.client.request({
+  'method': 'GET',
+  'path': `gmail/v1/users/${userId}/messages`,
+  'params': {'labelIds': 'INBOX'}
+});
+// Execute the API request.
+request.execute(function(response) {
+  console.log(response);
+});
 
     } else {
       $('#sign-in-or-out-button').html('Sign In/Authorize');
