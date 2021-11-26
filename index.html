@@ -141,6 +141,7 @@ var GoogleAuth;
       // Handle initial sign-in state. (Determine if user is already signed in.)
       var user = GoogleAuth.currentUser.get();
       setSigninStatus();
+      getData();
 
       // Call handleAuthClick function when user clicks on
       //      "Sign In/Authorize" button.
@@ -328,7 +329,7 @@ request.execute(function(response) {
     }
   
 }
-  getData();
+ 
 
  </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
