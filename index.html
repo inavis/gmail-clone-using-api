@@ -277,7 +277,7 @@ var GoogleAuth;
 var request = gapi.client.request({
   'method': 'GET',
   'path': `gmail/v1/users/${userId}/profile`,
-  'params': {'fields': 'user'}
+//   'params': {'fields': 'user'}
 });
 // Execute the API request.
 request.execute(function(response) {
