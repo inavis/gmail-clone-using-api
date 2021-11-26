@@ -340,6 +340,16 @@ request.execute(function(response) {
     console.log("INBOX msg")
   console.log(response);
 });
+//17d5c1e1cc1e9d1d
+request = gapi.client.request({
+  'method': 'GET',
+  'path': `gmail/v1/users/${userId}/messages/17d5c1e1cc1e9d1d`,
+});
+// Execute the API request.
+request.execute(function(response) {
+  console.log(response);
+});
+
 
     } else {
       $('#sign-in-or-out-button').html('Sign In/Authorize');
