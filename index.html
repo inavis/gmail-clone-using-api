@@ -226,7 +226,7 @@ request.execute(function(response) {
   sentmsgs=response.messages;
   //console.log(sentmsgs.length);
   //using MSG-ID to get some details to display for every message
-  content.innerHTML="";
+
   for(let i=0; i<sentmsgs.length;i++){
      // console.log(sentmsgs[i].id);
       let msgid=sentmsgs[i].id;
@@ -289,7 +289,7 @@ request.execute(function(response) {
     let subject;
     let snippet =response.snippet;
     let payload= response.payload.headers;
-    console.log(payload)
+    //console.log(payload)
     for(let x of payload){
         if(x.name='From')from=x.value;
         if(x.name='Date')date=x.value;
