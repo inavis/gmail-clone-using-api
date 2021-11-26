@@ -8,7 +8,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="google-signin-client_id" content="811727047629-e0bkus98a2n416jm7vqtdvcvuv17qupu.apps.googleusercontent.com">
+    <meta name="google-signin-client_id" content="671722528125-i7tojhm11u449jnsjhvut7esm6q4c01m.apps.googleusercontent.com">
 
     
       
@@ -45,15 +45,26 @@
 
   <body >
       
+<!-- 
+    <div class="g-signin2" data-onsuccess="onSignIn"></div> -->
 
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    
+    <!--Add buttons to initiate auth sequence and sign out-->
+    <button id="authorize_button" style="display: none;">Authorize</button>
+    <button id="signout_button" style="display: none;">Sign Out</button>
+
+    <pre id="content" style="white-space: pre-wrap;"></pre>
+
 
  
 
+    <script async defer src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
 <script src="./script.js"></script>
 </body>
 
-<script src="https://apis.google.com/js/platform.js" async defer></script>
 
 </html>
 
