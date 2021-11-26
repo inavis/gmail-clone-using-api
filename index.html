@@ -189,7 +189,7 @@ let request;
 });
 // Execute the API request.
 request.execute(function(response) {
-  console.log(response.emailAddress,response.messagesTotal);
+  //console.log(response.emailAddress,response.messagesTotal);
 });
 
 //GETS SENT MSGS -> details like count,..
@@ -200,7 +200,7 @@ request.execute(function(response) {
 });
 // Execute the API request.
 request.execute(function(response) {
-  console.log(response.messagesTotal,response.messagesUnread);
+  //console.log(response.messagesTotal,response.messagesUnread);
 });
 
 //GETS PRIMARY MSGS -> details like count,..
@@ -211,7 +211,7 @@ request = gapi.client.request({
 });
 // Execute the API request.
 request.execute(function(response) {
-  console.log(response.messagesTotal,response.messagesUnread);
+ // console.log(response.messagesTotal,response.messagesUnread);
 });
 
 
@@ -272,9 +272,9 @@ request = gapi.client.request({
 });
 // Execute the API request.
 request.execute(function(response) {
-    console.log("INBOX msg");
+    //console.log("INBOX msg");
     primarymsgs=response.messages;
-  console.log(primarymsgs);
+  ///console.log(primarymsgs);
   for(let i=0;i<primarymsgs.length;i++){
       let msgid = primarymsgs[i].id;
         request = gapi.client.request({
