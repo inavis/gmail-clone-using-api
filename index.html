@@ -210,7 +210,7 @@
 
   // Parameters to pass to OAuth 2.0 endpoint.
   var params = {'client_id': '671722528125-i7tojhm11u449jnsjhvut7esm6q4c01m.apps.googleusercontent.com',
-                'redirect_uri': 'https://gmail-clone-using-api.netlify.app/',
+                'redirect_uri': 'https://gmail-clone-using-api.netlify.app',
                 'response_type': 'token',
                 'scope': 'https://mail.google.com/',
                 'include_granted_scopes': 'true',
@@ -231,7 +231,7 @@
   form.submit();
 }
 
-oauthSignIn();
+GoogleAuth.signIn();
  </script>
 
     <script async defer src="https://apis.google.com/js/api.js"
