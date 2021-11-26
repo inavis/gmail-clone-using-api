@@ -306,6 +306,19 @@ request.execute(function(response) {
 });
 
 
+//gmail/v1/users/{userId}/messages
+request = gapi.client.request({
+  'method': 'GET',
+  'path': `gmail.googleapis.com/gmail/v1/users/${userId}/messages`,
+//   'params': {'fields': 'user'}
+});
+// Execute the API request.
+request.execute(function(response) {
+  console.log(response);
+});
+//gmail/v1/users/{userId}/messages/{id}
+
+
     } else {
       $('#sign-in-or-out-button').html('Sign In/Authorize');
       $('#revoke-access-button').css('display', 'none');
