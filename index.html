@@ -334,9 +334,16 @@ request.execute(function(response) {
     let subject =response.payload.headers[3].value;
     let date = response.payload.headers[1].value;
     let parts = response.payload.parts;
+    let images=[];
 
     	//console.log(to,subject,date);
-        console.log(parts)
+        //console.log(parts)
+        for(let j=0;j<parts.length;j++){
+            if(parts[j].mimeType=="image/jpeg"){
+                images.push(parts[j].filename);
+            }
+        }
+        console.log(images);
 });
   }
 });
