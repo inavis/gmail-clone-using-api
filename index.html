@@ -283,15 +283,15 @@ var request1 = gapi.client.request({
 request1.execute(function(response) {
   console.log(response);
 });
-var request2 = gapi.client.request({
-  'method': 'GET',
-  'path': `gmail/v1/users/${userId}/labels/SENT`,
-//   'params': {'fields': 'user'}
-});
-// Execute the API request.
-request2.execute(function(response) {
-  console.log(response);
-});
+// var request2 = gapi.client.request({
+//   'method': 'GET',
+//   'path': `gmail/v1/users/${userId}/labels/SENT`,
+// //   'params': {'fields': 'user'}
+// });
+// // Execute the API request.
+// request2.execute(function(response) {
+//   console.log(response);
+// });
 
 
     } else {
