@@ -269,9 +269,10 @@ var GoogleAuth;
           'access to this app.');
           
   console.log(user.Ba);
+  //GETS ID OF USER LOGGING IN
   let userId=String(user.Ba)
 
-
+//GETS BASIC PROFILE DETAILS
 let request;
  request = gapi.client.request({
   'method': 'GET',
@@ -283,7 +284,7 @@ request.execute(function(response) {
   console.log(response);
 });
 
-
+//GETS SENT MSGS -> details like count,..
  request = gapi.client.request({
   'method': 'GET',
   'path': `gmail/v1/users/${userId}/labels/SENT`,
@@ -294,7 +295,7 @@ request.execute(function(response) {
   console.log(response);
 });
 
-
+//GETS PRIMARY MSGS -> details like count,..
 request = gapi.client.request({
   'method': 'GET',
   'path': `gmail/v1/users/${userId}/labels/INBOX`,
@@ -306,7 +307,7 @@ request.execute(function(response) {
 });
 
 
-//gmail/v1/users/{userId}/messages
+//GETS SENT MSGS details->  like message id,..
 request = gapi.client.request({
   'method': 'GET',
   'path': `gmail/v1/users/${userId}/messages`,
@@ -316,7 +317,15 @@ request = gapi.client.request({
 request.execute(function(response) {
   console.log(response);
 });
-//gmail/v1/users/{userId}/messages/{id}
+//gmail/v1/users/{userId}/messages/{id} Eg msg id:17d1f14060a66ae9
+request = gapi.client.request({
+  'method': 'GET',
+  'path': `gmail/v1/users/${userId}/messages/17d1f14060a66ae9`,
+});
+// Execute the API request.
+request.execute(function(response) {
+  console.log(response);
+});
 
 
     } else {
