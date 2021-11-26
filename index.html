@@ -110,7 +110,7 @@ let primarymsgs;
 var sentmails=[];
 var primarymails=[];
 
-let content =document.getElementsByClassName("mails");
+let content =document.querySelector("mails");
 
 var GoogleAuth;
   var SCOPE = 'https://mail.google.com/';
@@ -235,7 +235,7 @@ request.execute(function(response) {
         }
        // console.log(images);
        let data={'to':to,'subject':subject,'date':date,'images':images};
-       document.getElementsByClassName("mails").innerHTML+=data;
+       content.innerHTML+='conyye';
        
        
 });
@@ -296,10 +296,7 @@ request.execute(function(response) {
   
 }
 
-function renderData(sentmails){
-    console.log(sentmails)
-}
- 
+
 
  </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
