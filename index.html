@@ -252,12 +252,13 @@ request.execute(function(response) {
        // console.log(images);
        let data={'to':to,'subject':subject,'date':date,'images':images};
        sentmails.push(data);
+       console.log(sentmails)
        
 });
   }
 });
 
-console.log(sentmails)
+
 //gmail/v1/users/{userId}/messages/{id} Eg msg id:17d1f14060a66ae9
 //GETTING contents of specific message with message id from previous requests
 
@@ -283,7 +284,7 @@ request.execute(function(response) {
     });
 // Execute the API request.
 request.execute(function(response) {
-    console.log(response)
+    //console.log(response)
     let from;
     let date;
     let subject;
