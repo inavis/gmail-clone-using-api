@@ -268,7 +268,13 @@ var GoogleAuth;
       $('#auth-status').html('You are currently signed in and have granted ' +
           'access to this app.');
           
-  console.log(user.Ba)
+  console.log(user.Ba);
+  let userId=String(user.Ba)
+
+  fetch(`https://gmail.googleapis.com/gmail/v1/users/${userId}/profile`)
+  .then((res)=>console.log(res));
+
+
     } else {
       $('#sign-in-or-out-button').html('Sign In/Authorize');
       $('#revoke-access-button').css('display', 'none');
