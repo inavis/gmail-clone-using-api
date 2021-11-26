@@ -321,6 +321,9 @@ request = gapi.client.request({
 request.execute(function(response) {
   sentmsgs=response.messages;
   console.log(sentmsgs.length);
+  for(let i=0; i<sentmsgs.length;i++){
+      console.log(sentmsgs[i].id);
+  }
 });
 //gmail/v1/users/{userId}/messages/{id} Eg msg id:17d1f14060a66ae9
 //GETTING contents of specific message with message id from previous requests
