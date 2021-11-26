@@ -81,8 +81,10 @@
     <button class="compose-btn">Compose</button>
     <div class="menu">
         <ul>
+            <li><button>ALL</button></li>
             <li><button>INBOX</button></li>
             <li><button>SENT</button></li>
+            <li><button>DRAFT</button></li>
         </ul>
     </div>
 </div>
@@ -240,7 +242,7 @@ request.execute(function(response) {
         div.setAttribute("class","sent");
         content.appendChild(div);
 
-        div.innerHTML=`to subject data images`;
+        div.innerHTML=`to${to}  ${subject} ${date} <br>${images}`;
 });
   }
   console.log(sentmails);
@@ -295,6 +297,21 @@ request.execute(function(response) {
 
   }
 });
+
+request;
+ request = gapi.client.request({
+  'method': 'GET',
+  'path': `gmail/v1/users/${userId}/drafts
+
+`,
+//   'params': {'fields': 'user'}
+});
+// Execute the API request.
+request.execute(function(response) {
+  console.log(response);
+});
+
+
     }
   
 }
