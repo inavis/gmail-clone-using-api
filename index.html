@@ -344,7 +344,7 @@ request.execute(function(response) {
                 images.push(parts[j].filename);
             }
         }
-        console.log(images);
+       // console.log(images);
 });
   }
 });
@@ -373,7 +373,10 @@ request.execute(function(response) {
     });
 // Execute the API request.
 request.execute(function(response) {
-  console.log(response);
+    let from =  response.payload.headers[18].value;
+    let snippet =response.snippet;
+    let date = response.payload.headers[17].value
+  console.log(from,snipppet,date);
 });
 
   }
