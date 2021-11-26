@@ -4,3 +4,6 @@
 .mails{
     background-color: gray;
 }
+.compose-btn{
+    float: right;
+}
