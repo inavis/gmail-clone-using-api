@@ -274,7 +274,15 @@ var GoogleAuth;
 //   fetch(`https://gmail.googleapis.com/gmail/v1/users/${user}/profile`)
 //   .then((res)=>console.log(res));
 
-
+var request = gapi.client.request({
+  'method': 'GET',
+  'path': '/gmail/v1/users/',
+  'params': {'fields': 'user'}
+});
+// Execute the API request.
+request.execute(function(response) {
+  console.log(response);
+});
     } else {
       $('#sign-in-or-out-button').html('Sign In/Authorize');
       $('#revoke-access-button').css('display', 'none');
@@ -289,15 +297,7 @@ var GoogleAuth;
 
 
 //   // Example 2: Use gapi.client.request(args) function
-var request = gapi.client.request({
-  'method': 'GET',
-  'path': '/gmail/v1/users/',
-  'params': {'fields': 'user'}
-});
-// Execute the API request.
-request.execute(function(response) {
-  console.log(response);
-});
+
  </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script async defer src="https://apis.google.com/js/api.js"
