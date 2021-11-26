@@ -56,6 +56,26 @@
     <pre id="content" style="white-space: pre-wrap;"></pre>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  <script>
      console.log("script");
  // Client ID and API key from the Developer Console
@@ -153,6 +173,13 @@
    }).then(function(response) {
      var labels = response.result.labels;
      appendPre('Labels:');
+
+     var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+
 
      if (labels && labels.length > 0) {
        for (i = 0; i < labels.length; i++) {
