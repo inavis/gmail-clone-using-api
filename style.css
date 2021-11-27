@@ -10,3 +10,17 @@
 .compose-btn{
     float: right;
 }
+
+.formaddress{
+    color: gray;
+}
+.mailsubject{
+    font-weight: bold;
+}
+
+.messagedate{
+    color: gray;
+}
+.starred{
+    border: 1px solid black;
+}
