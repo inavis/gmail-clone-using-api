@@ -144,10 +144,10 @@ button{
 #head{
     display: inline-grid;
 }
-#search-bar{
+/* #search-bar{
     display: inline-grid;
-    /* width:50%;
-    height: 60px; */
+    width:50%;
+    height: 60px;
     border-radius: 10px;
     background-color: gray;
-}
+} */
