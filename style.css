@@ -20,18 +20,20 @@
 .mailsubject{
     font-weight: bold;
     display: inline-grid;
-    width: 58%;
-    overflow: hidden;
+    width: 63%;
+    overflow-y: hidden;
 }
 
 .messagedate{
     color: gray;
     display: inline-grid;
-    width: 20%;
+    width: 15%;
     overflow: hidden;
 }
 .starred{
     border: 1px solid black;
     /* text-align: center; */
     padding: 5px;
+    margin: 2%;
+    height: 50px;
 }
