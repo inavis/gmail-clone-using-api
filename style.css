@@ -141,3 +141,11 @@ button{
     font-weight: bold;
     font-size: 30px;
 }
+#head{
+    display: inline-grid;
+}
+#search-bar{
+    display: inline-grid;
+    width:80%;
+    height: 100px;
+}
