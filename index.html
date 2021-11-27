@@ -285,9 +285,9 @@ request.execute(function(response) {
         `;
         if(images.length>0){
             if(images.length>1){
-                div.innerHTML+=`<div><span class="attachment1">${images[0]} </span> <span class="attachment2">${images[1]}</span> <b> and ${images.length-2} more files</b><div> <br>`
+                div.innerHTML+=`<div><span class="attachment1">${images[0]} </span> <span class="attachment2">${images[1]}</span> <b> and ${images.length-2} more files</b><div>`
             }else{
-                div.innerHTML+=` <div><span class="attachment1">${images[0]}</span><div> <br>`
+                div.innerHTML+=` <div><span class="attachment1">${images[0]}</span><div> `
             }
         }
 });
