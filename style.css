@@ -106,6 +106,7 @@ button{
     outline: none;
 }
 .sidebar{
+    margin-left: 1%;
     display: inline-grid;
     width: 14%;
 }
