@@ -63,9 +63,7 @@ background-color: ivory;
 .sent:hover{
     background-color: ivory;
 }
-.menu-item:hover{
-    background-color: lightgreen;
-}
+
 .attachment1,.attachment2{
     text-align: center;
     /* height: 30px;
@@ -95,4 +93,12 @@ button{
 .mails{
     display: inline-grid;
     width:82%
+}
+#starredbadge,#sentbadge,#draftbadge{
+    float: right;
+}
+.menu-item:hover{
+    background-color: rgb(245, 173, 182);
+    color: red;
+    border-top-right-radius:10px ;
 }
