@@ -80,9 +80,9 @@
     <button>3lines</button>
     <button class="compose-btn">Compose</button>
     <div class="menu">
-        <div>STARRED<span class="badge badge-secondary">New</span></div>
-        <div>SENT<span class="badge badge-secondary">New</span></div>
-        <div>DRAFT<span class="badge badge-secondary">New</span></div>
+        <div>STARRED<span class="badge badge-secondary" id="starredbagde">New</span></div>
+        <div>SENT<span class="badge badge-secondary" id="sentbadge">New</span></div>
+        <div>DRAFT<span class="badge badge-secondary" id="draftbadge">New</span></div>
     </div>
 </div>
 
@@ -215,7 +215,9 @@ function getData(){
 // Execute the API request.
 request.execute(function(response) {
   console.log(response.messagesTotal,response.messagesUnread);
+  document.querySelectorAll("#sentbadge").innerHTML=response.messagesTotal;
 });
+
 //GETS PRIMARY MSGS -> details like count,..
 request = gapi.client.request({
   'method': 'GET',
@@ -225,6 +227,7 @@ request = gapi.client.request({
 // Execute the API request.
 request.execute(function(response) {
  console.log(response.messagesTotal,response.messagesUnread);
+ document.querySelectorAll("#starredbadge").innerHTML=response.messagesTotal;
 });
 
 
@@ -372,7 +375,8 @@ request.execute(function(response) {
 });
 // Execute the API request.
 request.execute(function(response) {
-    console.log(response.resultSizeEstimate)
+    //console.log(response.resultSizeEstimate)
+    document.querySelectorAll("#draftbadge").innerHTML=response.resultSizeEstimate;
     response=response.drafts;
     for(let i=0;i<response.length;i++){
        // console.log(response[i].id)
