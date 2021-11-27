@@ -21,7 +21,7 @@
 .mailsubject{
     font-weight: bold;
     display: inline-grid;
-    width: 69%;
+    width: 67%;
     height: 50px;
     
     overflow-y: hidden;
@@ -29,7 +29,7 @@
 
 .messagedate{
     display: inline-grid;
-    width: 9%;
+    width: 11%;
     /* font-weight: bold; */
     float: right;
     color:gray;
