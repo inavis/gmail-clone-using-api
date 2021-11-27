@@ -27,7 +27,7 @@
 
 function add(){
     console.log("add")
-    console.log(document.getElementsByTagName("body"));
+    console.log(document.getElementsByTagName("body").innerHTML);
 }
 
 setTimeout(add,10000);
