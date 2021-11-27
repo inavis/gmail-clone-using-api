@@ -372,8 +372,8 @@ request.execute(function(response) {
 });
 // Execute the API request.
 request.execute(function(response) {
+    console.log(response.resultSizeEstimate)
     response=response.drafts;
-    console.log(response.resultSizeEstimate);
     for(let i=0;i<response.length;i++){
        // console.log(response[i].id)
       
