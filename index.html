@@ -274,7 +274,7 @@ request.execute(function(response) {
     });
 // Execute the API request.
 request.execute(function(response) {
-   // console.log(response)
+    console.log(response)
     let from;
     let date;
     let subject;
@@ -288,17 +288,12 @@ request.execute(function(response) {
     }
   
 
-//     let from =  response.payload.headers[18].value;
+        // let div = document.createElement("div");
+        // div.setAttribute("class","card");
+        // div.setAttribute("class","primary");
+        // content.appendChild(div);
 
-//     let date = response.payload.headers[19].value
-        // let subject = response.payload.headers[15].value
-
-        let div = document.createElement("div");
-        div.setAttribute("class","card");
-        div.setAttribute("class","primary");
-        content.appendChild(div);
-
-        div.innerHTML=`<br>${from} <br>`;
+        // div.innerHTML=`<br>${from}  ${subject}     ${snippet}    ${date}<br>`;
 
 });
 
