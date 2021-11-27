@@ -110,7 +110,7 @@
 let sentmsgs;
 let primarymsgs;
 var sentmails=[];
-var primarymails=[];
+// var primarymails=[];
 
 let content =document.querySelector(".mails");
 
@@ -264,6 +264,7 @@ request = gapi.client.request({
 // Execute the API request.
 request.execute(function(response) {
     //console.log("INBOX msg");
+    var primarymails=response;
     primarymsgs=response.messages;
   ///console.log(primarymsgs);
   for(let i=0;i<primarymsgs.length;i++){
@@ -298,7 +299,8 @@ request.execute(function(response) {
   }
 });
 
-request;
+console.log(primarymails)
+
  request = gapi.client.request({
   'method': 'GET',
   'path': `gmail/v1/users/${userId}/drafts`,
