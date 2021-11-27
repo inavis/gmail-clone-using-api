@@ -43,3 +43,11 @@
     margin: 2%;
     
 }
+.attachment{
+    text-align: center;
+    height: 30px;
+    width: 30px;
+    overflow: hidden;
+    background-color: gray;
+    color: red;
+}
