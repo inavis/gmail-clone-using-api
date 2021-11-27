@@ -210,7 +210,7 @@ request = gapi.client.request({
 // Execute the API request.
 request.execute(function(response) {
   sentmsgs=response.messages;
-  console.log(sentmsgs);
+  //console.log(sentmsgs);
   //using MSG-ID to get some details to display for every message
 
   for(let i=0; i<sentmsgs.length;i++){
@@ -222,6 +222,7 @@ request.execute(function(response) {
 });
 // Execute the API request.
 request.execute(function(response) {
+    console.log(response)
     let to = response.payload.headers[5].value;
     let subject =response.payload.headers[3].value;
     let date = response.payload.headers[1].value;
@@ -245,7 +246,6 @@ request.execute(function(response) {
         div.innerHTML=`to${to}  ${subject} ${date} <br>${images[0]}  ${images[1]}`;
 });
   }
-  console.log(sentmails);
 });
 
 
