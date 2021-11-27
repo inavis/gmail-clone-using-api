@@ -16,14 +16,14 @@
 
 .fromaddress{
     display: inline-grid;
-    width: 22%;
+    width: 20%;
     word-break: break-all;
     font-weight: bold;
 }
 .mailsubject{
     font-weight: bold;
     display: inline-grid;
-    width: 67%;
+    width: 50%;
     height: 50px;
     
     overflow-y: hidden;
