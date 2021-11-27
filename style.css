@@ -2,7 +2,10 @@
     display: none;
 }
 .mails{
-    background-color: gray;
+    background-color: rgb(250, 245, 245);
+    display: inline-block;
+    border: 1px solid black;
+    padding: 5px;
 }
 .compose-btn{
     float: right;

@@ -259,7 +259,7 @@ request.execute(function(response) {
 request = gapi.client.request({
   'method': 'GET',
   'path': `gmail/v1/users/${userId}/messages`,
-  'params': {'labelIds': 'INBOX'}
+  'params': {'labelIds': 'STARRED'}
 });
 // Execute the API request.
 request.execute(function(response) {
@@ -278,21 +278,21 @@ request.execute(function(response) {
     let from;
     let date;
     let subject;
-    let snippet =response.snippet;
-    let payload= response.payload.headers;
+    // let snippet =response.snippet;
+    // let payload= response.payload.headers;
     //console.log(payload)
-    for(let x of payload){
-        if(x.name='From'){
-            from=x.value;
-        }
-        else if(x.name='Date'){
-            date=x.value;
-        }
-        else if(x.name='Subject'){
-            subject=x.value;
-        }
-        console.log(from,date,subject)
-    }
+    // for(let x of payload){
+    //     if(x.name='From'){
+    //         from=x.value;
+    //     }
+    //     else if(x.name='Date'){
+    //         date=x.value;
+    //     }
+    //     else if(x.name='Subject'){
+    //         subject=x.value;
+    //     }
+    //    / console.log(from,date,subject)
+    // }
   
 
         // let div = document.createElement("div");
@@ -338,6 +338,8 @@ request.execute(function(response) {
 });
     }
 });
+
+//https://gmail.googleapis.com/gmail/v1/users/{userId}/messages/{messageId}/attachments/{id}
 
 
     }
