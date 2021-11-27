@@ -109,6 +109,9 @@ button{
 .fas{
     padding-right: 10px;
 }
+.fa-image{
+    color: rgb(131, 31, 31);
+}
 .compose-btn{
     padding: 20px;
     border-radius: 30px;
