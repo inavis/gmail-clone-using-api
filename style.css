@@ -21,6 +21,7 @@
     font-weight: bold;
     display: inline-grid;
     width: 63%;
+    height: 50px;
     overflow-y: hidden;
 }
 
@@ -35,5 +36,5 @@
     /* text-align: center; */
     padding: 5px;
     margin: 2%;
-    height: 50px;
+    
 }
