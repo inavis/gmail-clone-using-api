@@ -101,7 +101,9 @@ button{
     padding-right: 10px;
 }
 
-
+#sign-in-or-out-button,#revoke-access-button{
+    margin:10%
+}
 
 @media  (min-width:200px) and (max-width:500px){
     .id-text,.fa-envelope-open{
