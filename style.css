@@ -109,10 +109,62 @@ button{
 @media  (min-width:200px) and (max-width:500px){
     .id-text,.fa-envelope-open{
         font-weight: bold;
-        font-size: 15px;
+        font-size: 16px;
     }
     .compose-btn{
-        padding: 7px;
+        padding: 3px;
+        border-radius:150px;
+        font-size: 10px;
+    }
+    .attachment1,.attachment2{
+        text-align: center;
+        /* height: 50px;
+        width: 50px; */
+        overflow-x: hidden;
+        border: 1px solid gray;
+        border-radius: 8px;
+        color: gray;
+        padding: 1px;
+        font-size: 5px;
+        background-color: honeydew;
+    }
+    .file-number{
+        text-align: center;
+        height: 50px;
+        width: 50px;
+        overflow-x: hidden;
+        border: 1px solid gray;
+        border-radius: 8px;
+        color: gray;
+        padding: 2px;
+        font-size: 5px;
+        background-color: honeydew;
+    }
+    .attachment1{
+        margin-left: 13%;
+    }
+    .attachment2{
+        margin-left: 1%;
+    }
+    .messagedate{
+        font-size: 5px;
+    }
+    .mails{
+        font-size: 7px;
+    }
+    .menu{
+        font-size: 7px;
+    }
+}
+
+
+@media  (min-width:501px) and (max-width:1000px){
+    .id-text,.fa-envelope-open{
+        font-weight: bold;
+        font-size: 20px;
+    }
+    .compose-btn{
+        padding: 5px;
         border-radius: 20px;
     }
     .attachment1,.attachment2{
@@ -136,55 +188,7 @@ button{
         border-radius: 30px;
         color: gray;
         padding: 5px;
-        font-size:7px;
-        background-color: honeydew;
-    }
-    .attachment1{
-        margin-left: 8%;
-    }
-    .attachment2{
-        margin-left: 1%;
-    }
-    .messagedate{
         font-size: 7px;
-    }
-    .mails{
-        font-size: 12px;
-    }
-}
-
-
-@media  (min-width:501px) and (max-width:1000px){
-    .id-text,.fa-envelope-open{
-        font-weight: bold;
-        font-size: 20px;
-    }
-    .compose-btn{
-        padding: 10px;
-        border-radius: 30px;
-    }
-    .attachment1,.attachment2{
-        text-align: center;
-        /* height: 50px;
-        width: 50px; */
-        overflow-x: hidden;
-        border: 1px solid gray;
-        border-radius: 10px;
-        color: gray;
-        padding: 3px;
-        font-size: 10px;
-        background-color: honeydew;
-    }
-    .file-number{
-        text-align: center;
-        height: 50px;
-        width: 50px;
-        overflow-x: hidden;
-        border: 1px solid gray;
-        border-radius: 30px;
-        color: gray;
-        padding: 5px;
-        font-size: 10px;
         background-color: honeydew;
     }
     .attachment1{
@@ -194,10 +198,13 @@ button{
         margin-left: 1%;
     }
     .messagedate{
-        font-size: 9px;
+        font-size: 5px;
     }
     .mails{
-        font-size: 15px;
+        font-size: 10px;
+    }
+    .menu{
+        font-size: 10px;
     }
 }
 
