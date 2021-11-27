@@ -96,9 +96,16 @@ button{
 }
 #starredbadge,#sentbadge,#draftbadge{
     float: right;
+    padding: 10px;
+    display:none
+}
+.menu-item{
+    font-weight: bold;
 }
 .menu-item:hover{
     background-color: rgb(245, 173, 182);
     color: red;
     border-top-right-radius:10px ;
+    display: block;
+
 }
