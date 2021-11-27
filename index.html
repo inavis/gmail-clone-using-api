@@ -356,9 +356,10 @@ request.execute(function(response) {
         div.setAttribute("class","starred");
         content2.appendChild(div);
         if(date[3]<2021){
-            date = date[1]+" "+date[2]
-        }else{
             date = date[1]+" "+date[2]+" "+date[3]
+            
+        }else{
+            date = date[1]+" "+date[2]
         }
 
         if(snippet.length>3){
@@ -441,9 +442,10 @@ request.execute(function(response) {
         content3.appendChild(div);
 
         if(date[3]<2021 ){
-            date = date[1]+" "+date[2]
-        }else{
             date = date[1]+" "+date[2]+" "+date[3]
+            
+        }else{
+            date = date[1]+" "+date[2]
         }
 
     if(snippet.length>3){
