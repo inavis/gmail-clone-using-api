@@ -30,5 +30,4 @@ function add(){
     console.log(document.getElementsByTagName("body"));
 }
 
-add();
-
+setTimeout(add,10000);
