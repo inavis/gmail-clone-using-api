@@ -440,7 +440,7 @@ request.execute(function(response) {
         div.setAttribute("class","draft");
         content3.appendChild(div);
 
-        if(date[3]<2021){
+        if(date[3]<2021 || date[2]<2021 || date[1]<2021){
             date = date[1]+" "+date[2]
         }else{
             date = date[1]+" "+date[2]+" "+date[3]
