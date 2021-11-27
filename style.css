@@ -1,10 +1,9 @@
-body{
-    width: 100%;
-}
+
 #revoke-access-button{
     display: none;
 }
 .mails{
+    width: 100%;
     background-color: rgb(250, 245, 245);
     display: inline-block;
     border: 1px solid black;
@@ -32,7 +31,7 @@ body{
 
 .messagedate{
     display: inline-grid;
-    width: 11%;
+    width: 10%;
     /* font-weight: bold; */
     float: right;
     color:gray;
