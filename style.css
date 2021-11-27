@@ -97,7 +97,11 @@ button{
 #starredbadge,#sentbadge,#draftbadge{
     float: right;
 }
+.menu-item{
+    padding: 5px;
+}
 .menu-item:hover{
     background-color: rgb(245, 173, 182);
     color: red;
+    border-radius: 20px;
 }
