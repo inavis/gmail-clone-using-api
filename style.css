@@ -103,6 +103,6 @@ button{
 }
 .menu-item:hover{
     background-color: rgb(245, 173, 182);
-    color: red;
+    color: rgb(131, 31, 31);
     border-radius: 20px;
 }
