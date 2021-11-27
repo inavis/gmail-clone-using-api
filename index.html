@@ -274,13 +274,13 @@ request.execute(function(response) {
     });
 // Execute the API request.
 request.execute(function(response) {
-    console.log(response)
-    let from;
-    let date;
-    let subject;
-    // let snippet =response.snippet;
-    // let payload= response.payload.headers;
-    //console.log(payload)
+    
+    let from
+    let date
+    let subject
+    let snippet =response.snippet;
+    let payload= response.payload.headers;
+    console.log(payload,snippet)
     // for(let x of payload){
     //     if(x.name='From'){
     //         from=x.value;
