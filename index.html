@@ -297,7 +297,13 @@ request.execute(function(response) {
         div.setAttribute("class","starred");
         content.appendChild(div);
 
-        div.innerHTML=`<br><span class="fromaddress">${from}</span>  <span class="mailsubject">${subject}</span>   <span class="messagedate">${date}</span> <br>`;
+        div.innerHTML=`
+        <br>
+        <div class="fromaddress">${from}</div> 
+         <div class="mailsubject">${subject}</div>  
+          <div class="messagedate">${date}</div> 
+          
+          `;
 
 });
 
