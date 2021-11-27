@@ -137,3 +137,7 @@ button{
     padding: 20px;
     border-radius: 30px;
 }
+.id-text,*.fa-envelope-open{
+    font-weight: bold;
+    font-size: 20px;
+}
