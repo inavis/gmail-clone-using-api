@@ -242,7 +242,7 @@ request.execute(function(response) {
         div.setAttribute("class","sent");
         content.appendChild(div);
 
-        div.innerHTML=`to${to}  ${subject} ${date} <br>${images}`;
+        div.innerHTML=`to${to}  ${subject} ${date} <br>${images[0]}  ${images[1]}`;
 });
   }
   console.log(sentmails);
