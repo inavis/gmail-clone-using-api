@@ -357,24 +357,24 @@ request.execute(function(response) {
     });
 // Execute the API request.
 request.execute(function(response) {
-    console.log(response)
+    // console.log(response)
     let date;
     let to;
     let subject;
     let snippet = response.message.snippet;
-    // let payload= response.payload.headers;
+    let payload= response.message.payload.headers;
     
-    // for(let j=0;j<payload.length;j++){
-    //     if(payload[j].name=='Date'){
-    //         date = payload[j].value.split(' ');
-    //     }else if(payload[j].name=='Subject'){
-    //         subject=payload[j].value;
-    //     }else if(payload[j].name=='To'){
-    //         to=payload[j].value;
-    //     }
+    for(let j=0;j<payload.length;j++){
+        if(payload[j].name=='Date'){
+            date = payload[j].value.split(' ');
+        }else if(payload[j].name=='Subject'){
+            subject=payload[j].value;
+        }else if(payload[j].name=='To'){
+            to=payload[j].value;
+        }
         
-    // }
-    // console.log(to,date,subject);
+    }
+    console.log(to,date,subject);
 
 });
     }
