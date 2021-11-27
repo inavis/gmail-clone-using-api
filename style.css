@@ -30,8 +30,10 @@
 .messagedate{
     display: inline-grid;
     width: 15%;
-    font-weight: bold;
+    /* font-weight: bold; */
     float: right;
+    color:gray;
+    font-size: medium;
 }
 .snippet{
     font-weight: lighter;
