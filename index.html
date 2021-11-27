@@ -384,6 +384,10 @@ request.execute(function(response) {
         to+=" Draft"
     }
     // console.log(subject);
+    let div = document.createElement("div");
+        div.setAttribute("class","card");
+        div.setAttribute("class","draft");
+        content.appendChild(div);
     if(snippet.length>3){
             div.innerHTML=`
         
