@@ -48,13 +48,16 @@
     margin-left: 2%;    
 }
 .draft{
-    cursor: url(draft.png), auto;
+    /* cursor: url(draft.png), auto; */
+    cursor: pointer;
 }
 .starred{
-    cursor: url(starred.png) ,auto;
+    /* cursor: url(starred.png) ,auto; */
+    cursor: pointer;
 }
 .sent{
-    cursor: url(send.png),auto;
+    /* cursor: url(send.png),auto; */
+    cursor: pointer;
 }
 .draft:hover{
 background-color: ivory;
