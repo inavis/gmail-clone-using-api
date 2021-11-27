@@ -88,3 +88,11 @@ button{
     border:none;
     outline: none;
 }
+.sidebar{
+    display: inline-grid;
+    width: 10%;
+}
+.mails{
+    display: inline-grid;
+    width:80%
+}
