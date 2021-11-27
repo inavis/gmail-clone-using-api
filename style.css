@@ -96,10 +96,11 @@ button{
 }
 #starredbadge,#sentbadge,#draftbadge{
     float: right;
-    padding: 10px;
+    
 }
 .menu-item{
     font-weight: bold;
+    padding: 10px;
 }
 .menu-item:hover{
     background-color: rgb(245, 173, 182);
