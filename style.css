@@ -38,7 +38,7 @@
     color: gray;
     word-break: break-all;
 }
-.starred,.sent{
+.starred,.sent,.draft{
     border: 1px solid black;
     /* text-align: center; */
     padding: 5px;
@@ -47,13 +47,14 @@
 }
 .attachment1,.attachment2{
     text-align: center;
-    height: 30px;
-    width: 30px;
+    /* height: 30px;
+    width: 30px; */
     overflow-x: hidden;
     border: 1px solid gray;
     border-radius: 10px;
     color: gray;
     padding: 5px;
+    font-size: 10px;
 }
 .attachment1{
     margin-left: 23%;
