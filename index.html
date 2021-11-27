@@ -222,7 +222,7 @@ request.execute(function(response) {
 });
 // Execute the API request.
 request.execute(function(response) {
-    console.log(response)
+    //console.log(response)
     let to = response.payload.headers[5].value;
     let subject =response.payload.headers[3].value;
     let date = response.payload.headers[1].value;
@@ -280,20 +280,17 @@ request.execute(function(response) {
     let subject
     let snippet =response.snippet;
     let payload= response.payload.headers;
-    console.log(payload,snippet)
-    // for(let x of payload){
-    //     if(x.name='From'){
-    //         from=x.value;
-    //     }
-    //     else if(x.name='Date'){
-    //         date=x.value;
-    //     }
-    //     else if(x.name='Subject'){
-    //         subject=x.value;
-    //     }
-    //    / console.log(from,date,subject)
-    // }
-  
+    
+    for(let j=0;j<payload.length;j++){
+        if(payload[j].name=='Date'){
+            date = payload[j].value;
+        }else if(payload[j].name=='Subject'){
+            subject=payload[j].value;
+        }else if(payload[j].name=='From'){
+            from=payload[j].value;
+        }
+    }
+    console.log(from,date,snippet);
 
         // let div = document.createElement("div");
         // div.setAttribute("class","card");
