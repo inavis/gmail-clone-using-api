@@ -375,7 +375,7 @@ request.execute(function(response) {
         
     }
     console.log(subject);
-    if(subject.trim().length==0){
+    if(subject==undefined){
         subject="(no subject)";
     }
     if(to==undefined){
