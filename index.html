@@ -375,6 +375,14 @@ request.execute(function(response) {
         
     }
     console.log(to,date,subject);
+    if(subject.trim().length==0){
+        subject="(no subject)";
+    }
+    if(to.trim().length==0){
+        to="Draft"
+    }else{
+        to+=" Draft"
+    }
 
 });
     }
