@@ -91,7 +91,13 @@
 
     
 
-<div class="mails">
+<div class="starredmails">
+
+</div>
+<div class="sentmails">
+
+</div>
+<div class="draftmails">
 
 </div>
 
@@ -112,7 +118,9 @@ let primarymsgs;
 var sentmails=[];
 // var primarymails=[];
 
-let content =document.querySelector(".mails");
+let content1 =document.querySelector(".sentmails");
+let content2 =document.querySelector(".starredmails");
+let content3 =document.querySelector(".draftmails");
 
 var GoogleAuth;
   var SCOPE = 'https://mail.google.com/';
@@ -244,7 +252,7 @@ request.execute(function(response) {
         let div = document.createElement("div");
         div.setAttribute("class","card");
         div.setAttribute("class","sent");
-        content.appendChild(div);
+        content1.appendChild(div);
 
         div.innerHTML=`
         <div class="fromaddress">to:${to}</div> 
@@ -310,7 +318,7 @@ request.execute(function(response) {
         let div = document.createElement("div");
         div.setAttribute("class","card");
         div.setAttribute("class","starred");
-        content.appendChild(div);
+        content2.appendChild(div);
 
         if(snippet.length>3){
             div.innerHTML=`
@@ -388,7 +396,7 @@ request.execute(function(response) {
     let div = document.createElement("div");
         div.setAttribute("class","card");
         div.setAttribute("class","draft");
-        content.appendChild(div);
+        content3.appendChild(div);
     if(snippet.length>3){
             div.innerHTML=`
         
@@ -419,9 +427,9 @@ request.execute(function(response) {
 
 function starred(){
     alert("starred");
-    document.querySelectorAll(".starred").style.display="block";
-    document.querySelectorAll(".sent").style.display="none";
-    document.querySelectorAll(".draft").style.display="none";
+    document.querySelector(".starredmails").style.display="block";
+    document.querySelector(".sentmails").style.display="none";
+    document.querySelector(".draftmails").style.display="none";
     
 }
 
