@@ -109,3 +109,7 @@ button{
 .fas{
     padding-right: 10px;
 }
+.compose-btn{
+    padding: 20px;
+    border-radius: 30px;
+}
