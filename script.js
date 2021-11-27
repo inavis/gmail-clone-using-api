@@ -25,5 +25,10 @@
 //     }
 
 
+function add(){
+    console.log("add")
+    console.log(document.getElementsByTagName("body"));
+}
 
+add();
 
