@@ -44,7 +44,7 @@
     margin: 2%;
     
 }
-.attachment{
+.attachment1,.attachment2{
     text-align: center;
     height: 30px;
     width: 30px;
@@ -52,5 +52,11 @@
     border: 1px solid gray;
     border-radius: 10px;
     color: gray;
-    margin-left: 10%;
+    padding: 5px;
+}
+.attachment1{
+    margin-left: 15%;
+}
+.attachment2{
+    margin-left: 2%;
 }
