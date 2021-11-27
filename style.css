@@ -47,8 +47,9 @@
     text-align: center;
     height: 30px;
     width: 30px;
-    overflow: hidden;
+    overflow-x: hidden;
     border: 1px solid gray;
+    border-radius: 10px;
     color: gray;
     margin: 1%;
 }
