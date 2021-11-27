@@ -45,6 +45,12 @@
     margin: 2%;
     
 }
+.starred,.sent,.draft:hover{
+background-color: ivory;
+}
+.menu-item:hover{
+    background-color: lightgreen;
+}
 .attachment1,.attachment2{
     text-align: center;
     /* height: 30px;
