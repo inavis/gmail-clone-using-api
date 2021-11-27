@@ -39,7 +39,7 @@
     word-break: break-all;
 }
 .starred,.sent,.draft{
-    border: 1px solid black;
+    border-bottom: 1px solid black;
     /* text-align: center; */
     padding: 5px;
     margin: 2%;
@@ -55,10 +55,15 @@
     color: gray;
     padding: 5px;
     font-size: 10px;
+    background-color: honeydew;
 }
 .attachment1{
     margin-left: 23%;
 }
 .attachment2{
     margin-left: 2%;
+}
+button{
+    border:none;
+    outline: none;
 }
