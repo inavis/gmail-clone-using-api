@@ -88,11 +88,12 @@ button{
 }
 .sidebar{
     display: inline-grid;
-    width: 14%;
+    width: 15%;
+    margin-left: 1%;
 }
 .mails{
     display: inline-grid;
-    width:82%
+    width:80%
 }
 #starredbadge,#sentbadge,#draftbadge{
     float: right;
@@ -106,6 +107,5 @@ button{
     background-color: rgb(245, 173, 182);
     color: red;
     border-top-right-radius:10px ;
-    border-bottom-right-radius: 10px;
 
 }
