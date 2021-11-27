@@ -383,7 +383,24 @@ request.execute(function(response) {
     }else{
         to+=" Draft"
     }
-    console.log(subject);
+    // console.log(subject);
+    if(snippet.length>3){
+            div.innerHTML=`
+        
+        <div class="fromaddress">to:${to}</div> 
+         <div class="mailsubject">${subject} - <span class="snippet">${snippet}<span></div>  
+          <div class="messagedate">${date[1]} ${date[2]} ${date[3]}</div> 
+          
+          `;
+        }else{
+            div.innerHTML=`
+        
+        <div class="fromaddress">From:${from}</div> 
+         <div class="mailsubject">${subject} <span></div>  
+          <div class="messagedate">${date[1]} ${date[2]} ${date[3]}</div> 
+          
+          `;
+        }
 });
     }
 });
