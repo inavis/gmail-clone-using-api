@@ -11,18 +11,24 @@
     float: right;
 }
 
-.formaddress{
+.fromaddress{
     color: gray;
+    display: inline-flex;
+    overflow: hidden;
 }
 .mailsubject{
     font-weight: bold;
+    display: inline-flex;
+    overflow: hidden;
 }
 
 .messagedate{
     color: gray;
+    display: inline-flex;
+    overflow: hidden;
 }
 .starred{
     border: 1px solid black;
-    text-align: center;
+    /* text-align: center; */
     padding: 5px;
 }
