@@ -290,14 +290,14 @@ request.execute(function(response) {
             from=payload[j].value;
         }
     }
-    console.log(from,date,snippet);
+    //console.log(from,date,snippet);
 
-        // let div = document.createElement("div");
-        // div.setAttribute("class","card");
-        // div.setAttribute("class","primary");
-        // content.appendChild(div);
+        let div = document.createElement("div");
+        div.setAttribute("class","card");
+        div.setAttribute("class","primary");
+        content.appendChild(div);
 
-        // div.innerHTML=`<br>${from}  ${subject}     ${snippet}    ${date}<br>`;
+        div.innerHTML=`<br>${from}  ${subject}     ${snippet}    ${date}<br>`;
 
 });
 
