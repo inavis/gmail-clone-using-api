@@ -375,14 +375,15 @@ request.execute(function(response) {
         
     }
    
-    if(subject===undefined){
+    if(subject===undefined || subject.length===0){
         subject="(no subject)";
     }
     if(to==undefined){
         to="Draft"
-    }else{
-        to+=" Draft"
     }
+    // else{
+    //     to+=" Draft"
+    // }
     // console.log(subject);
     let div = document.createElement("div");
         div.setAttribute("class","card");
