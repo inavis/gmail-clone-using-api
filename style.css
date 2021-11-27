@@ -36,6 +36,7 @@
 .snippet{
     font-weight: lighter;
     color: gray;
+    word-break: break-all;
 }
 .starred,.sent{
     border: 1px solid black;
