@@ -244,12 +244,18 @@ request.execute(function(response) {
         content.appendChild(div);
 
         div.innerHTML=`
-        <div class="fromaddress">to:${from}</div> 
-         <div class="mailsubject">${subject} - <span class="snippet">${snippet}<span></div>  
+        <div class="fromaddress">to:${to}</div> 
+         <div class="mailsubject">${subject}<span></div>  
           <div class="messagedate">${date[1]} ${date[2]} ${date[3]}</div> 
-          <br>
-          <div>${images[0]} ${images[0]}<div>
+          
         `;
+        if(images.length>0){
+            if(images.length>1){
+                div.innerHTML+=`<br> <div><span class="attachment">${images[0]} </span> <span class="attachment">${images[1]}</span><div>`
+            }else{
+                div.innerHTML+=`<br> <div><span class="attachment">${images[0]}</span><div>`
+            }
+        }
 });
   }
 });
