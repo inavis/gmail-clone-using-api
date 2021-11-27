@@ -46,6 +46,12 @@
     
 }
 .draft{
+    cursor: url(draft.png), auto;
+}
+.starred{
+    cursor: pointer;
+}
+.sent{
     cursor: pointer;
 }
 .draft:hover{
@@ -54,7 +60,7 @@ background-color: ivory;
 .starred:hover{
     background-color: ivory;
 }
-.draft:hover{
+.sent:hover{
     background-color: ivory;
 }
 .menu-item:hover{
