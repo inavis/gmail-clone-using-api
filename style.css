@@ -35,7 +35,7 @@
     /* font-weight: bold; */
     float: right;
     color:gray;
-    font-size: 13px;
+    
 }
 .snippet{
     font-weight: lighter;
@@ -71,36 +71,7 @@ background-color: ivory;
     background-color: ivory;
 }
 
-.attachment1,.attachment2{
-    text-align: center;
-    height: 50px;
-    width: 50px;
-    overflow-x: hidden;
-    border: 1px solid gray;
-    border-radius: 10px;
-    color: gray;
-    padding: 5px;
-    font-size: 15px;
-    background-color: honeydew;
-}
-.file-number{
-    text-align: center;
-    height: 50px;
-    width: 50px;
-    overflow-x: hidden;
-    border: 1px solid gray;
-    border-radius: 30px;
-    color: gray;
-    padding: 5px;
-    font-size: 15px;
-    background-color: honeydew;
-}
-.attachment1{
-    margin-left: 23%;
-}
-.attachment2{
-    margin-left: 2%;
-}
+
 button{
     border:none;
     outline: none;
@@ -133,11 +104,50 @@ button{
     color: rgb(131, 31, 31);
     font-size: 19px;
 }
-.compose-btn{
-    padding: 20px;
-    border-radius: 30px;
-}
-.id-text,*.fa-envelope-open{
-    font-weight: bold;
-    font-size: 30px;
+
+
+
+
+@media  (min-width:1000px){
+    .id-text,.fa-envelope-open{
+        font-weight: bold;
+        font-size: 30px;
+    }
+    .compose-btn{
+        padding: 20px;
+        border-radius: 30px;
+    }
+    .attachment1,.attachment2{
+        text-align: center;
+        height: 50px;
+        width: 50px;
+        overflow-x: hidden;
+        border: 1px solid gray;
+        border-radius: 10px;
+        color: gray;
+        padding: 5px;
+        font-size: 15px;
+        background-color: honeydew;
+    }
+    .file-number{
+        text-align: center;
+        height: 50px;
+        width: 50px;
+        overflow-x: hidden;
+        border: 1px solid gray;
+        border-radius: 30px;
+        color: gray;
+        padding: 5px;
+        font-size: 15px;
+        background-color: honeydew;
+    }
+    .attachment1{
+        margin-left: 23%;
+    }
+    .attachment2{
+        margin-left: 2%;
+    }
+    .messagedate{
+        font-size: 13px;
+    }
 }
