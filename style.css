@@ -52,7 +52,7 @@
     cursor: url(starred.png) ,auto;
 }
 .sent{
-    cursor: url(sent.png),auto;
+    cursor: url(send.png),auto;
 }
 .draft:hover{
 background-color: ivory;
