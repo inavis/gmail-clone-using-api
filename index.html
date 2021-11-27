@@ -80,12 +80,9 @@
     <button>3lines</button>
     <button class="compose-btn">Compose</button>
     <div class="menu">
-        <ul>
-            <li><button class="all" onclick="all()">ALL</button></li>
-            <li><button class="starred" onclick="starred()">STARRED</button></li>
-            <li><button class="sent" onclick="sent()">SENT</button></li>
-            <li><button class="draft" onclick="draft()">DRAFT</button></li>
-        </ul>
+        <div>STARRED<span class="badge badge-secondary">New</span></div>
+        <div>SENT<span class="badge badge-secondary">New</span></div>
+        <div>DRAFT<span class="badge badge-secondary">New</span></div>
     </div>
 </div>
 
@@ -207,7 +204,30 @@ function getData(){
     if (isAuthorized) {
         console.log(user.Ba);
   //GETS ID OF USER LOGGING IN
-  let userId=String(user.Ba)
+  let userId=String(user.Ba);
+
+  //GETS SENT MSGS -> details like count,..
+ request = gapi.client.request({
+  'method': 'GET',
+  'path': `gmail/v1/users/${userId}/labels/SENT`,
+//   'params': {'fields': 'user'}
+});
+// Execute the API request.
+request.execute(function(response) {
+  console.log(response.messagesTotal,response.messagesUnread);
+});
+//GETS PRIMARY MSGS -> details like count,..
+request = gapi.client.request({
+  'method': 'GET',
+  'path': `gmail/v1/users/${userId}/labels/STARRED`,
+//   'params': {'fields': 'user'}
+});
+// Execute the API request.
+request.execute(function(response) {
+ console.log(response.messagesTotal,response.messagesUnread);
+});
+
+
 
 //GETS SENT MSGS details->  like message id,..
 request = gapi.client.request({
@@ -353,7 +373,7 @@ request.execute(function(response) {
 // Execute the API request.
 request.execute(function(response) {
     response=response.drafts;
-    //console.log(response);
+    console.log(response.resultSizeEstimate);
     for(let i=0;i<response.length;i++){
        // console.log(response[i].id)
       
