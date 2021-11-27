@@ -294,10 +294,10 @@ request.execute(function(response) {
 
         let div = document.createElement("div");
         div.setAttribute("class","card");
-        div.setAttribute("class","primary");
+        div.setAttribute("class","starred");
         content.appendChild(div);
 
-        div.innerHTML=`<br>${from}  ${subject}    ${date}<br>`;
+        div.innerHTML=`<br><span class="fromaddress">${from}</span>  <span class="mailsubject">${subject}</span>   <span class="messagedate">${date}</span> <br>`;
 
 });
 
