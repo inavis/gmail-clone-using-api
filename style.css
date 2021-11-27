@@ -3,7 +3,7 @@
     display: none;
 }
 .mails{
-    width: 80%;
+    width: 100%;
     background-color: rgb(250, 245, 245);
     display: inline-block;
     border: 1px solid black;
@@ -16,14 +16,14 @@
 
 .fromaddress{
     display: inline-grid;
-    width: 20%;
+    width: 22%;
     word-break: break-all;
     font-weight: bold;
 }
 .mailsubject{
     font-weight: bold;
     display: inline-grid;
-    width: 50%;
+    width: 67%;
     height: 50px;
     
     overflow-y: hidden;
@@ -107,7 +107,7 @@ button{
 }
 .sidebar{
     display: inline-grid;
-    width: 18%;
+    width: 14%;
 }
 .mails{
     display: inline-grid;
