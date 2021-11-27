@@ -297,13 +297,23 @@ request.execute(function(response) {
         div.setAttribute("class","starred");
         content.appendChild(div);
 
-        div.innerHTML=`
-        <br>
-        <div class="fromaddress">${from}</div> 
-         <div class="mailsubject">${subject} - ${snippet}</div>  
+        if(snippet.length>3){
+            div.innerHTML=`
+        
+        <div class="fromaddress">From:${from}</div> 
+         <div class="mailsubject">${subject} - <span class="snippet">${snippet}<span></div>  
           <div class="messagedate">${date[1]} ${date[2]} ${date[3]}</div> 
           
           `;
+        }else{
+            div.innerHTML=`
+        
+        <div class="fromaddress">From:${from}</div> 
+         <div class="mailsubject">${subject} <span></div>  
+          <div class="messagedate">${date[1]} ${date[2]} ${date[3]}</div> 
+          
+          `;
+        }
 
 });
 

@@ -16,12 +16,14 @@
     display: inline-grid;
     width: 20%;
     word-break: break-all;
+    font-weight: bold;
 }
 .mailsubject{
     font-weight: bold;
     display: inline-grid;
     width: 63%;
     height: 50px;
+    
     overflow-y: hidden;
 }
 
@@ -29,7 +31,12 @@
     color: gray;
     display: inline-grid;
     width: 15%;
+    font-weight: bold;
     overflow: hidden;
+}
+.snippet{
+    font-weight: lighter;
+    color: gray;
 }
 .starred{
     border: 1px solid black;
