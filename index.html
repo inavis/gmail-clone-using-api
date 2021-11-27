@@ -285,10 +285,10 @@ request.execute(function(response) {
         if(x.name='From'){
             from=x.value;
         }
-        if(x.name='Date'){
+        else if(x.name='Date'){
             date=x.value;
         }
-        if(x.name='Subject'){
+        else if(x.name='Subject'){
             subject=x.value;
         }
         console.log(from,date,subject)
