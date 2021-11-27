@@ -24,10 +24,3 @@
 //       });
 //     }
 
-
-function add(){
-    console.log("add")
-    console.log(document.getElementsByClassName("starredmails").innerHTML);
-}
-
-setTimeout(add,10000);
