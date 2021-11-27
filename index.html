@@ -237,6 +237,9 @@ request.execute(function(response) {
             }
         }
        // console.log(images);
+       if(subject.trim().length==0){
+            subject="(no subject)"
+       }
        let data={'to':to,'subject':subject,'date':date,'images':images};
         let div = document.createElement("div");
         div.setAttribute("class","card");
@@ -251,9 +254,9 @@ request.execute(function(response) {
         `;
         if(images.length>0){
             if(images.length>1){
-                div.innerHTML+=`<br> <div><span class="attachment">${images[0]} </span> <span class="attachment">${images[1]}</span><div>`
+                document.querySelector(".mailsubject").innerHTML+=`<br> <div><span class="attachment">${images[0]} </span> <span class="attachment">${images[1]}</span><div>`
             }else{
-                div.innerHTML+=`<br> <div><span class="attachment">${images[0]}</span><div>`
+                document.querySelector(".mailsubject").innerHTML+=`<br> <div><span class="attachment">${images[0]}</span><div>`
             }
         }
 });
