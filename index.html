@@ -283,7 +283,7 @@ request.execute(function(response) {
     
     for(let j=0;j<payload.length;j++){
         if(payload[j].name=='Date'){
-            date = payload[j].value;
+            date = payload[j].value.split(' ');
         }else if(payload[j].name=='Subject'){
             subject=payload[j].value;
         }else if(payload[j].name=='From'){
@@ -300,8 +300,8 @@ request.execute(function(response) {
         div.innerHTML=`
         <br>
         <div class="fromaddress">${from}</div> 
-         <div class="mailsubject">${subject}</div>  
-          <div class="messagedate">${date}</div> 
+         <div class="mailsubject">${subject} - ${snippet}</div>  
+          <div class="messagedate">${date[1]} ${date[2]} ${date[3]}</div> 
           
           `;
 

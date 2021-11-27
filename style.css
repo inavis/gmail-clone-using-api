@@ -14,20 +14,20 @@
 .fromaddress{
     color: gray;
     display: inline-grid;
-    width: 33%;
-    overflow: hidden;
+    width: 20%;
+    word-break: break-all;
 }
 .mailsubject{
     font-weight: bold;
     display: inline-grid;
-    width: 33%;
+    width: 58%;
     overflow: hidden;
 }
 
 .messagedate{
     color: gray;
     display: inline-grid;
-    width: 33%;
+    width: 20%;
     overflow: hidden;
 }
 .starred{
