@@ -45,6 +45,9 @@
     margin: 2%;
     
 }
+.draft{
+    cursor: pointer;
+}
 .draft:hover{
 background-color: ivory;
 }
