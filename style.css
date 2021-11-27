@@ -71,13 +71,25 @@ background-color: ivory;
     background-color: ivory;
 }
 
-.attachment1,.attachment2,.file-number{
+.attachment1,.attachment2{
     text-align: center;
     height: 50px;
     width: 50px;
     overflow-x: hidden;
     border: 1px solid gray;
     border-radius: 10px;
+    color: gray;
+    padding: 5px;
+    font-size: 15px;
+    background-color: honeydew;
+}
+.file-number{
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    overflow-x: hidden;
+    border: 1px solid gray;
+    border-radius: 30px;
     color: gray;
     padding: 5px;
     font-size: 15px;
