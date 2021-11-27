@@ -81,10 +81,10 @@
     <button class="compose-btn">Compose</button>
     <div class="menu">
         <ul>
-            <li><button>ALL</button></li>
-            <li><button>INBOX</button></li>
-            <li><button>SENT</button></li>
-            <li><button>DRAFT</button></li>
+            <li><button class="all" onclick="all()">ALL</button></li>
+            <li><button class="starred" onclick="starred()">STARRED</button></li>
+            <li><button class="sent" onclick="sent()">SENT</button></li>
+            <li><button class="draft" onclick="draft()">DRAFT</button></li>
         </ul>
     </div>
 </div>
@@ -417,7 +417,13 @@ request.execute(function(response) {
   
 }
 
-
+function starred(){
+    alert("starred");
+    document.querySelectorAll(".starred").style.display="block";
+    document.querySelectorAll(".sent").style.display="none";
+    document.querySelectorAll(".draft").style.display="none";
+    
+}
 
  </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
