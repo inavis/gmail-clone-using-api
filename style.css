@@ -90,9 +90,9 @@ button{
 }
 .sidebar{
     display: inline-grid;
-    width: 10%;
+    width: 15%;
 }
 .mails{
     display: inline-grid;
-    width:80%
+    width:85%
 }
