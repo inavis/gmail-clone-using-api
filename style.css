@@ -45,8 +45,14 @@
     margin: 2%;
     
 }
-.starred,.sent,.draft:hover{
+.draft:hover{
 background-color: ivory;
+}
+.starred:hover{
+    background-color: ivory;
+}
+.draft:hover{
+    background-color: ivory;
 }
 .menu-item:hover{
     background-color: lightgreen;
