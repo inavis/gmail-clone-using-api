@@ -88,24 +88,18 @@ button{
 }
 .sidebar{
     display: inline-grid;
-    width: 15%;
-    margin-left: 1%;
+    width: 14%;
 }
 .mails{
     display: inline-grid;
-    width:80%
+    width:82%
 }
 #starredbadge,#sentbadge,#draftbadge{
     float: right;
-    
-}
-.menu-item{
-    font-weight: bold;
-    padding: 10px;
 }
 .menu-item:hover{
     background-color: rgb(245, 173, 182);
     color: red;
-    border-top-right-radius:10px ;
-
+    border-top-right-radius:20px ;
+    border-bottom-right-radius: 20px;
 }
