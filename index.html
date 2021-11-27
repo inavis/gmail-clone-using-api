@@ -355,13 +355,18 @@ request.execute(function(response) {
         div.setAttribute("class","card");
         div.setAttribute("class","starred");
         content2.appendChild(div);
+        if(date[3]<2021){
+            date = date[1]+" "+date[2]
+        }else{
+            date = date[1]+" "+date[2]+" "+date[3]
+        }
 
         if(snippet.length>3){
             div.innerHTML=`
         
         <div class="fromaddress">From:${from}</div> 
          <div class="mailsubject">${subject} - <span class="snippet">${snippet}<span></div>  
-          <div class="messagedate">${date[1]} ${date[2]} ${date[3]}</div> 
+          <div class="messagedate">${date}</div> 
           
           `;
         }else{
@@ -369,7 +374,7 @@ request.execute(function(response) {
         
         <div class="fromaddress">From:${from}</div> 
          <div class="mailsubject">${subject} <span></div>  
-          <div class="messagedate">${date[1]} ${date[2]} ${date[3]}</div> 
+          <div class="messagedate">${date}</div> 
           
           `;
         }
@@ -434,12 +439,19 @@ request.execute(function(response) {
         div.setAttribute("class","card");
         div.setAttribute("class","draft");
         content3.appendChild(div);
+
+        if(date[3]<2021){
+            date = date[1]+" "+date[2]
+        }else{
+            date = date[1]+" "+date[2]+" "+date[3]
+        }
+
     if(snippet.length>3){
             div.innerHTML=`
         
         <div class="fromaddress">to:${to}</div> 
          <div class="mailsubject">${subject} - <span class="snippet">${snippet}<span></div>  
-          <div class="messagedate">${date[1]} ${date[2]} ${date[3]}</div> 
+          <div class="messagedate">${date}</div> 
           
           `;
         }else{
@@ -447,7 +459,7 @@ request.execute(function(response) {
         
         <div class="fromaddress">to:${to}</div> 
          <div class="mailsubject">${subject} <span></div>  
-          <div class="messagedate">${date[1]} ${date[2]} ${date[3]}</div> 
+          <div class="messagedate">${date}</div> 
           
           `;
         }
