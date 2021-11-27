@@ -49,10 +49,10 @@
     cursor: url(draft.png), auto;
 }
 .starred{
-    cursor: pointer;
+    cursor: url(starred.png) ,auto;
 }
 .sent{
-    cursor: pointer;
+    cursor: url(sent.png),auto;
 }
 .draft:hover{
 background-color: ivory;
