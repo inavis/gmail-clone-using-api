@@ -13,18 +13,21 @@
 
 .fromaddress{
     color: gray;
-    display: inline-flex;
+    display: inline-grid;
+    width: 33%;
     overflow: hidden;
 }
 .mailsubject{
     font-weight: bold;
-    display: inline-flex;
+    display: inline-grid;
+    width: 33%;
     overflow: hidden;
 }
 
 .messagedate{
     color: gray;
-    display: inline-flex;
+    display: inline-grid;
+    width: 33%;
     overflow: hidden;
 }
 .starred{
