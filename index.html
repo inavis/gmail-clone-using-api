@@ -458,6 +458,16 @@ function printsent(){
     let parts = response.payload.parts;
     let images=[];
 
+    if(subject===undefined || subject.length===0 || subject==''){
+        subject="(no subject)";
+      }
+      if(to===undefined || to.trim().length<1){
+          to="Draft"
+      }else if(to.trim()[0]=="<" || to.trim()[1]=="<"){
+       to=to.split("<")[1].split(">")[0];
+        //console.log(to);
+      }
+
     	//console.log(to,subject,date);
         //console.log(parts)
         for(let j=0;j<parts.length;j++){
