@@ -454,10 +454,10 @@ function printdraft(response){
         
     }
    console.log(date,subject,to)
-    if(subject===undefined || subject.length===0){
+    if(subject===undefined || subject.length===0 || subject==''){
         subject="(no subject)";
       }
-      if(to==undefined ){
+      if(to===undefined ){
           to="Draft"
       }
       // else{
