@@ -421,7 +421,7 @@ request.execute(function(response) {
 request.execute(function(response) {
     // console.log(response)
     setdraft(response);
-   console.log(draft);
+  
 });
     }
 });
@@ -434,24 +434,25 @@ request.execute(function(response) {
 }
 
 
-function setstarred(response){
-  starred = response;
-}
-function printstarred(response){
+// function setstarred(response){
+//   starred = response;
+// }
+// function printstarred(response){
 
-}
+// }
 
-function setsent(response){
-  sent = response;
-}
-function printsent(response){
+// function setsent(response){
+//   sent = response;
+// }
+// function printsent(response){
   
-}
+// }
 
 
 //storing reponse in a variable
 function setdraft(response){
   draft.push(response);
+  console.log(draft);
   printdraft(draft);
 }
 
