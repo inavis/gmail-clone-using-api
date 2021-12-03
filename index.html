@@ -534,7 +534,7 @@ function printdraft(){
       }
       if(to===undefined || to.trim().length<1){
           to="Draft"
-      }else{
+      }else if(to.trim()[0]=="<"){
         console.log(to);
       }
       // else{
