@@ -456,7 +456,7 @@ function printdraft(response){
     if(subject===undefined || subject.length===0){
         subject="(no subject)";
       }
-      if(to==undefined){
+      if(to==undefined || to.length===0){
           to="Draft"
       }
       // else{
