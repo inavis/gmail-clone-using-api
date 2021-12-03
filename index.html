@@ -115,7 +115,7 @@
  <script>
      console.log("script");
      
-
+let draft;
 
 
 let sentmsgs;
@@ -416,7 +416,7 @@ request.execute(function(response) {
 // Execute the API request.
 request.execute(function(response) {
     // console.log(response)
-    printdraft(response);
+    setdraft(response);
    
 });
     }
@@ -428,6 +428,13 @@ request.execute(function(response) {
     }
   
 }
+
+//storing reponse in a variable
+function setdraft(response){
+  draft=response;
+  printdraft(draft);
+}
+//with stored variable display draft
 function printdraft(response){
   let date;
     let to;
