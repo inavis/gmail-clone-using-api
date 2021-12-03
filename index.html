@@ -416,7 +416,20 @@ request.execute(function(response) {
 // Execute the API request.
 request.execute(function(response) {
     // console.log(response)
-    let date;
+    printdraft(response);
+   
+});
+    }
+});
+
+//https://gmail.googleapis.com/gmail/v1/users/{userId}/messages/{messageId}/attachments/{id}
+
+
+    }
+  
+}
+function printdraft(response){
+  let date;
     let to;
     let subject;
     let snippet = response.message.snippet;
@@ -435,15 +448,15 @@ request.execute(function(response) {
    
     if(subject===undefined || subject.length===0){
         subject="(no subject)";
-    }
-    if(to==undefined){
-        to="Draft"
-    }
-    // else{
-    //     to+=" Draft"
-    // }
-    // console.log(subject);
-    let div = document.createElement("div");
+      }
+      if(to==undefined){
+          to="Draft"
+      }
+      // else{
+      //     to+=" Draft"
+      // }
+      // console.log(subject);
+      let div = document.createElement("div");
         div.setAttribute("class","card");
         div.setAttribute("class","draft");
         content3.appendChild(div);
@@ -472,17 +485,7 @@ request.execute(function(response) {
           
           `;
         }
-});
-    }
-});
-
-//https://gmail.googleapis.com/gmail/v1/users/{userId}/messages/{messageId}/attachments/{id}
-
-
-    }
-  
 }
-
 
 
  </script>
