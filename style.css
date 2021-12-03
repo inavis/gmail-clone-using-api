@@ -95,7 +95,9 @@ button{
     padding-right: 10px;
 }
 
-
+.compose-btn:hover{
+    box-shadow: 1px 2px gray;
+}
 @media  (min-width:200px) and (max-width:500px){
     .id-text,.fa-envelope-open{
         font-weight: bold;
