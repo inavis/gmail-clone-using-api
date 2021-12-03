@@ -215,7 +215,7 @@ function getData(){
      user = GoogleAuth.currentUser.get();
      isAuthorized = user.hasGrantedScopes(SCOPE);
     if (isAuthorized) {
-        console.log(user.Ba);
+      //  console.log(user.Ba);
   //GETS ID OF USER LOGGING IN
   let userId=String(user.Ba);
 
@@ -536,7 +536,7 @@ function printdraft(){
           to="Draft"
       }else if(to.trim()[0]=="<" || to.trim()[1]=="<"){
        to=to.split("<")[1].split(">")[0];
-        console.log(to);
+        //console.log(to);
       }
       // else{
       //     to+=" Draft"
