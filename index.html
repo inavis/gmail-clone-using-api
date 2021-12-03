@@ -115,9 +115,9 @@
  <script>
      console.log("script");
      
-let draft;
-let sent;
-let starred;
+let draft=[];
+let sent=[];
+let starred=[];
 
 
 let sentmsgs;
@@ -421,7 +421,7 @@ request.execute(function(response) {
 request.execute(function(response) {
     // console.log(response)
     setdraft(response);
-   
+   console.log(draft);
 });
     }
 });
@@ -433,14 +433,31 @@ request.execute(function(response) {
   
 }
 
+
+function setstarred(response){
+  starred = response;
+}
+function printstarred(response){
+
+}
+
+function setsent(response){
+  sent = response;
+}
+function printsent(response){
+  
+}
+
+
 //storing reponse in a variable
 function setdraft(response){
-  draft=response;
+  draft.push(response);
   printdraft(draft);
 }
+
 //with stored variable display draft
 function printdraft(response){
-  console.log(response)
+  //console.log(response)
   let date;
     let to;
     let subject;
@@ -457,7 +474,7 @@ function printdraft(response){
         }
         
     }
-   console.log(date,subject,to)
+   //console.log(date,subject,to)
     if(subject===undefined || subject.length===0 || subject==''){
         subject="(no subject)";
       }
