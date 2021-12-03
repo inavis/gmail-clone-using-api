@@ -86,8 +86,8 @@
     <button class="compose-btn"><i class="fas fa-plus"></i>Compose</button>
     <!-- <button>3lines</button> -->
     <div class="menu">
-        <div class=" starredside"><i class="fas fa-star"></i>STARRED<span id="starredbadge">0</span></div>
-        <div class=" sentside"><i class="fas fa-paper-plane"></i>SENT<span  id="sentbadge">0</span></div>
+        <div class=" starredside" onclick="displaystarred()"><i class="fas fa-star"></i>STARRED<span id="starredbadge">0</span></div>
+        <div class=" sentside" onclick="displaysent()"><i class="fas fa-paper-plane"></i>SENT<span  id="sentbadge">0</span></div>
         <div class=" draftside" onclick="displaydraft()"><i class="fas fa-edit"></i>DRAFT<span  id="draftbadge">0</span></div>
     </div>
 </div>
@@ -266,6 +266,142 @@ request.execute(function(response) {
 // Execute the API request.
 request.execute(function(response) {
     //console.log(response)
+   setsent(response);
+});
+  }
+});
+
+
+//gmail/v1/users/{userId}/messages/{id} Eg msg id:17d1f14060a66ae9
+//GETTING contents of specific message with message id from previous requests
+
+
+
+
+//GETS INBOX MSGS details->  like message id,..
+request = gapi.client.request({
+  'method': 'GET',
+  'path': `gmail/v1/users/${userId}/messages`,
+  'params': {'labelIds': 'STARRED'}
+});
+// Execute the API request.
+request.execute(function(response) {
+    //console.log("INBOX msg");
+    primarymsgs=response.messages;
+  ///console.log(primarymsgs);
+  for(let i=0;i<primarymsgs.length;i++){
+      let msgid = primarymsgs[i].id;
+        request = gapi.client.request({
+    'method': 'GET',
+    'path': `gmail/v1/users/${userId}/messages/${msgid}`,
+    });
+// Execute the API request.
+request.execute(function(response) {
+    
+   setstarred(response);
+
+});
+
+  }
+});
+
+
+
+ request = gapi.client.request({
+  'method': 'GET',
+  'path': `gmail/v1/users/${userId}/drafts`,
+//   'params': {'fields': 'user'}
+});
+// Execute the API request.
+request.execute(function(response) {
+    //console.log(response.resultSizeEstimate)
+    document.querySelector("#draftbadge").innerHTML=response.resultSizeEstimate;
+    response=response.drafts;
+    for(let i=0;i<response.length;i++){
+       // console.log(response[i].id)
+      
+        let draftid = response[i].id;
+
+        request = gapi.client.request({
+    'method': 'GET',
+    'path': `gmail/v1/users/${userId}/drafts/${draftid}`,
+    });
+// Execute the API request.
+request.execute(function(response) {
+    // console.log(response)
+    setdraft(response);
+  
+});
+    }
+});
+
+//https://gmail.googleapis.com/gmail/v1/users/{userId}/messages/{messageId}/attachments/{id}
+
+
+    }
+  
+}
+
+
+function setstarred(response){
+  starred.push(response);
+}
+function printstarred(){
+  for(response of starred){
+    let from
+    let date
+    let subject
+    let snippet =response.snippet;
+    let payload= response.payload.headers;
+    
+    
+    for(let j=0;j<payload.length;j++){
+        if(payload[j].name=='Date'){
+            date = payload[j].value.split(' ');
+        }else if(payload[j].name=='Subject'){
+            subject=payload[j].value;
+        }else if(payload[j].name=='From'){
+            from=payload[j].value;
+        }
+    }
+    //console.log(from,date,snippet);
+
+        let div = document.createElement("div");
+        div.setAttribute("class","card");
+        div.setAttribute("class","starred");
+        content.appendChild(div);
+        if(date[3]<2021){
+            date = date[1]+" "+date[2]+" "+date[3]
+            
+        }else{
+            date = date[1]+" "+date[2]
+        }
+
+        if(snippet.length>3){
+            div.innerHTML=`
+        
+        <div class="fromaddress">From:${from}</div> 
+         <div class="mailsubject">${subject} - <span class="snippet">${snippet}<span></div>  
+          <div class="messagedate">${date}</div> 
+          
+          `;
+        }else{
+            div.innerHTML=`
+        
+        <div class="fromaddress">From:${from}</div> 
+         <div class="mailsubject">${subject} <span></div>  
+          <div class="messagedate">${date}</div> 
+          
+          `;
+        }
+  }
+}
+
+function setsent(response){
+  sent.push(response);
+}
+function printsent(){
+  for(response of sent){
     let to = response.payload.headers[5].value;
     let subject =response.payload.headers[3].value;
     let date = response.payload.headers[1].value.split(' ');
@@ -313,140 +449,8 @@ request.execute(function(response) {
                 div.innerHTML+=` <div><span class="attachment1"><i class="fas fa-image"></i>${images[0]}</span><div> `
             }
         }
-});
   }
-});
-
-
-//gmail/v1/users/{userId}/messages/{id} Eg msg id:17d1f14060a66ae9
-//GETTING contents of specific message with message id from previous requests
-
-
-
-
-//GETS INBOX MSGS details->  like message id,..
-request = gapi.client.request({
-  'method': 'GET',
-  'path': `gmail/v1/users/${userId}/messages`,
-  'params': {'labelIds': 'STARRED'}
-});
-// Execute the API request.
-request.execute(function(response) {
-    //console.log("INBOX msg");
-    primarymsgs=response.messages;
-  ///console.log(primarymsgs);
-  for(let i=0;i<primarymsgs.length;i++){
-      let msgid = primarymsgs[i].id;
-        request = gapi.client.request({
-    'method': 'GET',
-    'path': `gmail/v1/users/${userId}/messages/${msgid}`,
-    });
-// Execute the API request.
-request.execute(function(response) {
-    
-    let from
-    let date
-    let subject
-    let snippet =response.snippet;
-    let payload= response.payload.headers;
-    
-    
-    for(let j=0;j<payload.length;j++){
-        if(payload[j].name=='Date'){
-            date = payload[j].value.split(' ');
-        }else if(payload[j].name=='Subject'){
-            subject=payload[j].value;
-        }else if(payload[j].name=='From'){
-            from=payload[j].value;
-        }
-    }
-    //console.log(from,date,snippet);
-
-        let div = document.createElement("div");
-        div.setAttribute("class","card");
-        div.setAttribute("class","starred");
-        content.appendChild(div);
-        if(date[3]<2021){
-            date = date[1]+" "+date[2]+" "+date[3]
-            
-        }else{
-            date = date[1]+" "+date[2]
-        }
-
-        if(snippet.length>3){
-            div.innerHTML=`
-        
-        <div class="fromaddress">From:${from}</div> 
-         <div class="mailsubject">${subject} - <span class="snippet">${snippet}<span></div>  
-          <div class="messagedate">${date}</div> 
-          
-          `;
-        }else{
-            div.innerHTML=`
-        
-        <div class="fromaddress">From:${from}</div> 
-         <div class="mailsubject">${subject} <span></div>  
-          <div class="messagedate">${date}</div> 
-          
-          `;
-        }
-
-});
-
-  }
-});
-
-
-
- request = gapi.client.request({
-  'method': 'GET',
-  'path': `gmail/v1/users/${userId}/drafts`,
-//   'params': {'fields': 'user'}
-});
-// Execute the API request.
-request.execute(function(response) {
-    //console.log(response.resultSizeEstimate)
-    document.querySelector("#draftbadge").innerHTML=response.resultSizeEstimate;
-    response=response.drafts;
-    for(let i=0;i<response.length;i++){
-       // console.log(response[i].id)
-      
-        let draftid = response[i].id;
-
-        request = gapi.client.request({
-    'method': 'GET',
-    'path': `gmail/v1/users/${userId}/drafts/${draftid}`,
-    });
-// Execute the API request.
-request.execute(function(response) {
-    // console.log(response)
-    setdraft(response);
-  
-});
-    }
-});
-
-//https://gmail.googleapis.com/gmail/v1/users/{userId}/messages/{messageId}/attachments/{id}
-
-
-    }
-  
 }
-
-
-// function setstarred(response){
-//   starred = response;
-// }
-// function printstarred(response){
-
-// }
-
-// function setsent(response){
-//   sent = response;
-// }
-// function printsent(response){
-  
-// }
 
 
 //storing reponse in a variable
@@ -457,7 +461,7 @@ function setdraft(response){
 }
 
 //with stored variable display draft
-function printdraft(response){
+function printdraft(){
   //console.log(response)
   for(response of draft){
     let date;
@@ -524,9 +528,41 @@ function displaydraft(){
   content.innerHTML="";
   draftside.style.color="rgb(131, 31, 31)";
   draftside.style.backgroundColor="rgb(173, 136, 141)";
-  draftside.style.borderRadius="10px"
+  draftside.style.borderRadius="20px"
+  starredside.style.color="black";
+  starredside.style.backgroundColor="white";
+  sentside.style.color="black";
+  sentside.style.backgroundColor="white";
   printdraft(draft);
   
+}
+
+function displaystarred(){
+  alert("display starred");
+  content.innerHTML="";
+  starredside.style.color="rgb(131, 31, 31)";
+  starredside.style.backgroundColor="rgb(173, 136, 141)";
+  starredside.style.borderRadius="20px"
+  draftside.style.color="black";
+  draftside.style.backgroundColor="white";
+  sentside.style.color="black";
+  sentside.style.backgroundColor="white";
+  printstarred(draft);
+}
+
+function displaysent(){
+
+  alert("display sent");
+  content.innerHTML="";
+  sentside.style.color="rgb(131, 31, 31)";
+  sentside.style.backgroundColor="rgb(173, 136, 141)";
+  sentside.style.borderRadius="20px"
+  starredside.style.color="black";
+  starredside.style.backgroundColor="white";
+  draftside.style.color="black";
+  draftside.style.backgroundColor="white";
+  printsent(draft);
+
 }
 
 
