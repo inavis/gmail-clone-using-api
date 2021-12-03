@@ -452,14 +452,15 @@ request.execute(function(response) {
 //storing reponse in a variable
 function setdraft(response){
   draft.push(response);
-  console.log(draft);
-  printdraft(draft);
+  // console.log(draft);
+ // printdraft(draft);
 }
-
+printdraft(draft);
 //with stored variable display draft
 function printdraft(response){
   //console.log(response)
-  let date;
+  for(response of draft){
+    let date;
     let to;
     let subject;
     let snippet = response.message.snippet;
@@ -475,7 +476,7 @@ function printdraft(response){
         }
         
     }
-   //console.log(date,subject,to)
+   console.log(date,subject,to,snippet)
     if(subject===undefined || subject.length===0 || subject==''){
         subject="(no subject)";
       }
@@ -515,6 +516,7 @@ function printdraft(response){
           
           `;
         }
+  }
 }
 
 
