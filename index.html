@@ -538,7 +538,7 @@ function printdraft(){
       // else{
       //     to+=" Draft"
       // }
-      // console.log(subject);
+      console.log(subject,to,date,snippet);
       let div = document.createElement("div");
         div.setAttribute("class","card");
         div.setAttribute("class","draft");
@@ -554,7 +554,7 @@ function printdraft(){
     if(snippet.length>3){
             div.innerHTML=`
         
-        <div class="fromaddress">to:${to}</div> 
+        <div class="fromaddress">${to}</div> 
          <div class="mailsubject">${subject} - <span class="snippet">${snippet}<span></div>  
           <div class="messagedate">${date}</div> 
           
