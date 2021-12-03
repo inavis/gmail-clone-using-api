@@ -86,11 +86,11 @@ button{
     border-radius: 20px;
 
 }
-.starredside:hover,.sentside:hover,.draftside:hover{
+/* .starredside:hover,.sentside:hover,.draftside:hover{
     background-color: rgb(173, 136, 141);
     color: rgb(131, 31, 31);
     border-radius: 20px;
-}
+} */
 .fas{
     padding-right: 10px;
 }
