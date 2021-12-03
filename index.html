@@ -86,9 +86,9 @@
     <button class="compose-btn"><i class="fas fa-plus"></i>Compose</button>
     <!-- <button>3lines</button> -->
     <div class="menu">
-        <div class=" starred"><i class="fas fa-star"></i>STARRED<span id="starredbadge">0</span></div>
-        <div class=" sent"><i class="fas fa-paper-plane"></i>SENT<span  id="sentbadge">0</span></div>
-        <div class=" draft"><i class="fas fa-edit"></i>DRAFT<span  id="draftbadge">0</span></div>
+        <div class=" starredside"><i class="fas fa-star"></i>STARRED<span id="starredbadge">0</span></div>
+        <div class=" sentside"><i class="fas fa-paper-plane"></i>SENT<span  id="sentbadge">0</span></div>
+        <div class=" draftside"><i class="fas fa-edit"></i>DRAFT<span  id="draftbadge">0</span></div>
     </div>
 </div>
 
@@ -126,9 +126,9 @@ var sentmails=[];
 // var primarymails=[];
 
 let content =document.querySelector(".mails");
-let starredside = document.querySelector(".starred");
-let sentside = document.querySelector(".sent");
-let draftside = document.querySelector(".draft");
+let starredside = document.querySelector(".starredside");
+let sentside = document.querySelector(".sentside");
+let draftside = document.querySelector(".draftside");
 
 
 var GoogleAuth;

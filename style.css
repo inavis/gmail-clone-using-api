@@ -49,26 +49,15 @@
     margin-right: 2%;
     margin-left: 2%;    
 }
-.draft{
-    /* cursor: url(draft.png), auto; */
+/* .draft{
+    cursor: url(draft.png), auto;
+    cursor: pointer;
+} */
+.mails{
     cursor: pointer;
 }
-.starred{
-    /* cursor: url(starred.png) ,auto; */
-    cursor: pointer;
-}
-.sent{
-    /* cursor: url(send.png),auto; */
-    cursor: pointer;
-}
-.draft:hover{
+.mails:hover{
 background-color: ivory;
-}
-.starred:hover{
-    background-color: ivory;
-}
-.sent:hover{
-    background-color: ivory;
 }
 
 
@@ -88,11 +77,11 @@ button{
 #starredbadge,#sentbadge,#draftbadge{
     float: right;
 }
-.starred,.sent,.draft{
+.starredside,.sentside,.draftside{
     padding: 5px;
     font-weight: bold;
 }
-.starred:hover,.sent:hover,.draft:hover{
+.starredside:hover,.sentside:hover,.draftside:hover{
     background-color: rgb(245, 173, 182);
     color: rgb(131, 31, 31);
     border-radius: 20px;
