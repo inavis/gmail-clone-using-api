@@ -53,10 +53,10 @@
     cursor: url(draft.png), auto;
     cursor: pointer;
 } */
-.mails{
+.card{
     cursor: pointer;
 }
-.mails:hover{
+.card:hover{
 background-color: ivory;
 }
 
