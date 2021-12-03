@@ -534,11 +534,13 @@ function printdraft(){
       }
       if(to===undefined || to.trim().length<1){
           to="Draft"
+      }else{
+        console.log(to);
       }
       // else{
       //     to+=" Draft"
       // }
-      console.log(to);
+      
       let div = document.createElement("div");
         div.setAttribute("class","card");
         div.setAttribute("class","draft");
