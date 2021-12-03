@@ -436,6 +436,7 @@ function setdraft(response){
 }
 //with stored variable display draft
 function printdraft(response){
+  console.log(response)
   let date;
     let to;
     let subject;
@@ -456,7 +457,7 @@ function printdraft(response){
     if(subject===undefined || subject.length===0){
         subject="(no subject)";
       }
-      if(to==undefined || to.length===0){
+      if(to==undefined ){
           to="Draft"
       }
       // else{
