@@ -300,6 +300,53 @@ request.execute(function(response) {
     
    setstarred(response);
 
+   let from
+    let date
+    let subject
+    let snippet =response.snippet;
+    let payload= response.payload.headers;
+    
+    
+    for(let j=0;j<payload.length;j++){
+        if(payload[j].name=='Date'){
+            date = payload[j].value.split(' ');
+        }else if(payload[j].name=='Subject'){
+            subject=payload[j].value;
+        }else if(payload[j].name=='From'){
+            from=payload[j].value;
+        }
+    }
+    //console.log(from,date,snippet);
+
+        let div = document.createElement("div");
+        div.setAttribute("class","card");
+        div.setAttribute("class","starred");
+        content.appendChild(div);
+        if(date[3]<2021){
+            date = date[1]+" "+date[2]+" "+date[3]
+            
+        }else{
+            date = date[1]+" "+date[2]
+        }
+
+        if(snippet.length>3){
+            div.innerHTML=`
+        
+        <div class="fromaddress">From:${from}</div> 
+         <div class="mailsubject">${subject} - <span class="snippet">${snippet}<span></div>  
+          <div class="messagedate">${date}</div> 
+          
+          `;
+        }else{
+            div.innerHTML=`
+        
+        <div class="fromaddress">From:${from}</div> 
+         <div class="mailsubject">${subject} <span></div>  
+          <div class="messagedate">${date}</div> 
+          
+          `;
+        }
+
 });
 
   }
@@ -340,8 +387,6 @@ request.execute(function(response) {
 
     }
 
-    printstarred();
-  
 }
 
 
@@ -526,7 +571,7 @@ function printdraft(){
 }
 
 function displaydraft(){
-  alert("display draft");
+  //alert("display draft");
   content.innerHTML="";
   draftside.style.color="rgb(131, 31, 31)";
   draftside.style.backgroundColor="rgb(173, 136, 141)";
@@ -540,7 +585,7 @@ function displaydraft(){
 }
 
 function displaystarred(){
-  alert("display starred");
+  //alert("display starred");
   content.innerHTML="";
   starredside.style.color="rgb(131, 31, 31)";
   starredside.style.backgroundColor="rgb(173, 136, 141)";
@@ -554,7 +599,7 @@ function displaystarred(){
 
 function displaysent(){
 
-  alert("display sent");
+  //alert("display sent");
   content.innerHTML="";
   sentside.style.color="rgb(131, 31, 31)";
   sentside.style.backgroundColor="rgb(173, 136, 141)";
