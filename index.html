@@ -88,7 +88,7 @@
     <div class="menu">
         <div class=" starredside"><i class="fas fa-star"></i>STARRED<span id="starredbadge">0</span></div>
         <div class=" sentside"><i class="fas fa-paper-plane"></i>SENT<span  id="sentbadge">0</span></div>
-        <div class=" draftside"><i class="fas fa-edit"></i>DRAFT<span  id="draftbadge">0</span></div>
+        <div class=" draftside" onclick="displaydraft()"><i class="fas fa-edit"></i>DRAFT<span  id="draftbadge">0</span></div>
     </div>
 </div>
 
@@ -455,7 +455,7 @@ function setdraft(response){
   // console.log(draft);
  // printdraft(draft);
 }
-printdraft(draft);
+
 //with stored variable display draft
 function printdraft(response){
   //console.log(response)
@@ -517,6 +517,15 @@ function printdraft(response){
           `;
         }
   }
+}
+
+function displaydraft(){
+  alert("display draft");
+  content.innerHTML="";
+  draftside.style.color="rgb(131, 31, 31)";
+  draftside.style.backgroundColor="rgb(173, 136, 141)";
+  printdraft(draft);
+  
 }
 
 
