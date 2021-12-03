@@ -532,7 +532,7 @@ function printdraft(){
     if(subject===undefined || subject.length===0 || subject==''){
         subject="(no subject)";
       }
-      if(to===undefined ){
+      if(to===undefined || to.trim().length<1){
           to="Draft"
       }
       // else{
