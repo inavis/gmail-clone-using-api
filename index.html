@@ -76,38 +76,33 @@
   <hr>
 </div>
 
+<div class="secondpage">
+  
 <div>
-    <div id="head"><i class="fas fa-bars"></i> <i class="fas fa-envelope-open"></i>
-    <span id="id-text">GMAIL</span></div>
+  <div id="head"><i class="fas fa-bars"></i> <i class="fas fa-envelope-open"></i>
+  <span id="id-text">GMAIL</span></div>
 </div>
 <br>
 
 <div class="sidebar">
-    <button class="compose-btn"><i class="fas fa-plus"></i>Compose</button>
-    <br><br>
-    <!-- <button>3lines</button> -->
-    <div class="menu">
-        <div class=" starredside" onclick="displaystarred()"><i class="fas fa-star"></i>STARRED<span id="starredbadge">0</span></div>
-        <div class=" sentside" onclick="displaysent()"><i class="fas fa-paper-plane"></i>SENT<span  id="sentbadge">0</span></div>
-        <div class=" draftside" onclick="displaydraft()"><i class="fas fa-edit"></i>DRAFT<span  id="draftbadge">0</span></div>
-    </div>
+  <button class="compose-btn"><i class="fas fa-plus"></i>Compose</button>
+  <br><br>
+  <!-- <button>3lines</button> -->
+  <div class="menu">
+      <div class=" starredside" onclick="displaystarred()"><i class="fas fa-star"></i>STARRED<span id="starredbadge">0</span></div>
+      <div class=" sentside" onclick="displaysent()"><i class="fas fa-paper-plane"></i>SENT<span  id="sentbadge">0</span></div>
+      <div class=" draftside" onclick="displaydraft()"><i class="fas fa-edit"></i>DRAFT<span  id="draftbadge">0</span></div>
+  </div>
 </div>
 
-    
+  
 
 <div class="mails">
-    <!-- <div class="starredmails">
-       
-    </div>
-    <div class="sentmails">
-    
-    </div>
-    <div class="draftmails">
-    
-    </div> -->
-    
+
+  
 </div>
 
+</div>
 
 
 
@@ -130,6 +125,9 @@ let content =document.querySelector(".mails");
 let starredside = document.querySelector(".starredside");
 let sentside = document.querySelector(".sentside");
 let draftside = document.querySelector(".draftside");
+let secondpage = document.querySelector(".secondpage");
+
+secondpage.style.display="none";
 
 
 var GoogleAuth;
@@ -197,6 +195,8 @@ var GoogleAuth;
       $('#auth-status').html('You are currently signed in and have granted ' +
           'access to this app.');
           // content.style.display="block"
+          secondpage.style.display="block";
+
  
     } else {
       $('#sign-in-or-out-button').html('Sign In/Authorize');
@@ -205,6 +205,8 @@ var GoogleAuth;
           'signed out.');
           content.innerHTML="";
           // content.style.display="none"
+          secondpage.style.display="none";
+
     }
   }
 
