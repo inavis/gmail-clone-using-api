@@ -36,7 +36,7 @@
    
     <link rel = "stylesheet" href="style.css">  
  
-    <title></i>GMAIL-CLONE</title>
+    <title>GMAIL-CLONE</title>
 
     <style>
      
@@ -197,22 +197,18 @@ var GoogleAuth;
           'access to this app.');
           // content.style.display="block"
           secondpage.style.display="block";
+          $('#sign-in-or-out-button').style.float="right"
 
-             // JavaScript anonymous function
+             // JavaScript anonymous function to reload page after signin so that data from gmail can load
         (() => {
             if (window.localStorage) {
-  
-                // If there is no item as 'reload'
-                // in localstorage then create one &
-                // reload the page
+                // If there is no item as 'reload' in localstorage then create one & reload the page
                 if (!localStorage.getItem('reload')) {
                     localStorage['reload'] = true;
                     window.location.reload();
                 } else {
   
-                    // If there exists a 'reload' item
-                    // then clear the 'reload' item in
-                    // local storage
+                    // If there exists a 'reload' item then clear the 'reload' item in local storage
                     localStorage.removeItem('reload');
                 }
             }
@@ -226,6 +222,7 @@ var GoogleAuth;
           content.innerHTML="";
           // content.style.display="none"
           secondpage.style.display="none";
+          $('#sign-in-or-out-button').style.float="left"
 
     }
   }
