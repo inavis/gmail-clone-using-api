@@ -198,7 +198,8 @@ var GoogleAuth;
           'access to this app.');
           // content.style.display="block"
           secondpage.style.display="block";
-          signbtn.style.float="right"
+          signbtn.style.styleFloat = 'right';
+          signbtn.style.cssFloat = 'right';
 
              // JavaScript anonymous function to reload page after signin so that data from gmail can load
         (() => {
@@ -223,7 +224,8 @@ var GoogleAuth;
           content.innerHTML="";
           // content.style.display="none"
           secondpage.style.display="none";
-         signbtn.style.float="left"
+          signbtn.style.styleFloat = 'left';
+          signbtn.style.cssFloat = 'left';
 
     }
   }
