@@ -269,5 +269,7 @@ button{
 
 #confirm{
     background-color: coral;
-    font-size: small;
+    font-size: 20px;
+    height: 100px;
+    
 }
