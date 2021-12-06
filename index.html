@@ -10,6 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-signin-client_id" content="671722528125-i7tojhm11u449jnsjhvut7esm6q4c01m.apps.googleusercontent.com">
 
+    <meta http-equiv="Pragma" content="no-cache">
+      <meta http-equiv="Expires" content="-1">
+
     
       
       <!-- Font Awesome -->
@@ -43,7 +46,7 @@
     </style>
   </head>
 
-  <body >
+  <body  >
       
 <!-- 
     <div class="g-signin2" data-onsuccess="onSignIn"></div> -->
@@ -197,9 +200,7 @@ var GoogleAuth;
           // content.style.display="block"
           secondpage.style.display="block";
 
-        //  for(let i=0;i<1;i++){
-        //   location.reload(); //reload the page once incase data from gmail fails to load
-        //  }
+          window.location.reload(); 
 
  
     } else {
