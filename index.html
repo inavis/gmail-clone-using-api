@@ -196,7 +196,10 @@ var GoogleAuth;
           'access to this app.');
           // content.style.display="block"
           secondpage.style.display="block";
-          location.reload();
+          
+         for(let i=0;i<1;i++){
+          location.reload(); //reload the page once incase data from gmail fails to load
+         }
 
  
     } else {
