@@ -35,7 +35,8 @@
   
    
     <link rel = "stylesheet" href="style.css">  
- 
+    
+    <!-- Adding favicon along with title -->
     <title>GMAIL-CLONE</title>
     <link rel="icon" type="image/x-icon" href="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico">
 
@@ -561,7 +562,7 @@ function setdraft(response){
 
 //with stored variable display draft
 function printdraft(){
-  console.log(response)
+  console.log(draft)
   for(response of draft){
     let date;
     let to;
