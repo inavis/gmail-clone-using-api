@@ -36,7 +36,7 @@
    
     <link rel = "stylesheet" href="style.css">  
  
-    <title><i class="fas fa-envelope-open"></i>GMAIL-CLONE</title>
+    <title></i>GMAIL-CLONE</title>
 
     <style>
      
@@ -197,6 +197,26 @@ var GoogleAuth;
           'access to this app.');
           // content.style.display="block"
           secondpage.style.display="block";
+
+             // JavaScript anonymous function
+        (() => {
+            if (window.localStorage) {
+  
+                // If there is no item as 'reload'
+                // in localstorage then create one &
+                // reload the page
+                if (!localStorage.getItem('reload')) {
+                    localStorage['reload'] = true;
+                    window.location.reload();
+                } else {
+  
+                    // If there exists a 'reload' item
+                    // then clear the 'reload' item in
+                    // local storage
+                    localStorage.removeItem('reload');
+                }
+            }
+        })(); // Calling anonymous function here only
      
     } else {
       $('#sign-in-or-out-button').html('Sign In/Authorize');
