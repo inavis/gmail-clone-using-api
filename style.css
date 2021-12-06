@@ -57,6 +57,7 @@
 
 .starred:hover,.sent:hover,.draft:hover{
 background-color: ivory;
+
 }
 
 
@@ -79,6 +80,10 @@ button{
 .starredside,.sentside,.draftside{
     padding: 5px;
     font-weight: bold;
+}
+
+.starredside:hover,.sentside:hover,.draftside:hover{
+    cursor: pointer;
 }
 .starredside{
     background-color: rgb(173, 136, 141);
