@@ -84,6 +84,7 @@ button{
 
 .starredside:hover,.sentside:hover,.draftside:hover{
     cursor: pointer;
+    background-color: rgb(189, 175, 177);
 }
 .starredside{
     background-color: rgb(173, 136, 141);
