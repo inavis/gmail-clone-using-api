@@ -195,8 +195,8 @@ var GoogleAuth;
     if (isAuthorized) {
       $('#sign-in-or-out-button').html('Sign out');
       $('#revoke-access-button').css('display', 'inline-block');
-      $('#auth-status').html('You are currently signed in and have granted ' +
-          'access to this app.');
+      // $('#auth-status').html('You are currently signed in and have granted ' +
+      //     'access to this app.');
           // content.style.display="block"
           secondpage.style.display="block";
           signbtn.style.styleFloat = 'right';
@@ -222,8 +222,8 @@ var GoogleAuth;
     } else {
       $('#sign-in-or-out-button').html('Sign In/Authorize');
       $('#revoke-access-button').css('display', 'none');
-      $('#auth-status').html('You have not authorized this app or you are ' +
-          'signed out.');
+      // $('#auth-status').html('You have not authorized this app or you are ' +
+      //     'signed out.');
           content.innerHTML="";
           // content.style.display="none"
           secondpage.style.display="none";
