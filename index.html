@@ -128,6 +128,7 @@ let sentside = document.querySelector(".sentside");
 let draftside = document.querySelector(".draftside");
 let secondpage = document.querySelector(".secondpage");
 let signbtn = document.querySelector("#sign-in-or-out-button");
+let revokebtn = document.querySelector("#revoke-access-button");
 
 secondpage.style.display="none";
 
@@ -200,6 +201,8 @@ var GoogleAuth;
           secondpage.style.display="block";
           signbtn.style.styleFloat = 'right';
           signbtn.style.cssFloat = 'right';
+          // revokebtn.style.styleFloat = 'right';
+          // revokebtn.style.cssFloat = 'right';
 
              // JavaScript anonymous function to reload page after signin so that data from gmail can load
         (() => {
@@ -226,6 +229,8 @@ var GoogleAuth;
           secondpage.style.display="none";
           signbtn.style.styleFloat = 'left';
           signbtn.style.cssFloat = 'left';
+          revokebtn.style.styleFloat = 'left';
+          revokebtn.style.cssFloat = 'left';
 
     }
   }
